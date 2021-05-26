@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+//importing variables
+@import 'styles/variables';
+
+//importing base element styles
+@import 'styles/base_elements';
+
+//importing module specific styles
+@import 'styles/module_importer';
+
+//importing common utility styles
+@import 'styles/global_styles';

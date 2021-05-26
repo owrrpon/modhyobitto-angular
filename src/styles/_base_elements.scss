@@ -1,0 +1,102 @@
+//This file will have the base styles written globally for the different HTML elements. E.g. headings, p, button, a.
+
+*{
+    box-sizing: border-box;
+    &:active,
+    :focus{
+        outline-offset: 3px;
+    }
+    &::-webkit-scrollbar{
+        width: 10px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: lightgray;//todo
+    }
+}
+
+:after, :before{
+    box-sizing: border-box;
+}
+
+html,body{
+    font-family: 'Courier New', Courier, monospace; //todo
+    font-size: 16px;
+    color: darkgrey;//todo
+}
+
+//headings
+h1, .h1{
+    font-size: 4.25rem;
+    line-height: 110%;
+}
+h2, .h2{
+    font-size: 2.625rem;
+    line-height: 110%;
+}
+h3, .h3{
+    font-size: 1.625rem;
+    line-height: 125%;
+}
+h4, .h4{
+    font-size: 1.4rem;
+    font-weight: lighter;
+}
+h5, .h5{
+    font-size: 1rem;
+    line-height: 18px;
+}
+h6, .h6{
+    font-size: 1rem;
+    line-height: 125%;
+}
+
+a {
+    color: linkblue;//todo
+    &:hover {
+        color: cyanblue; //todo
+        text-decoration: none;
+    }
+}
+
+button {
+    background: linkblue;//todo
+    border: none;
+    box-shadow: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 20px;
+    text-align: left;
+    &.primary-button, &.secondary-button{
+        min-width: 150px;
+    }
+    &.secondary-button{
+        background: bggray; //todo
+        color: linkblue; //todo
+    }
+    &:hover, &:focus{
+        outline: none;
+    }
+    &:not(.mat-focus-indicator){
+        &:hover, &:focus{
+            background: cyanblue; //todo
+            color: white;
+            outline: none;
+        }
+        &:disabled{
+            background: white;
+            border: 1px solid lightgray; //todo
+            opacity: 0.6;
+            &, .button-icon:before{
+                color: lightgray;//todo
+            }
+        }
+    }
+    .button-icon{
+        font-size: 2rem;
+        margin-left: 10px;
+    }
+
+}
