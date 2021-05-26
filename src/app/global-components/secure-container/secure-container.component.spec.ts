@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModuleContainerComponent } from './module-container.component';
+import { SecureContainerComponent } from './secure-container.component';
 
-describe('ModuleContainerComponent', () => {
-  let component: ModuleContainerComponent;
-  let fixture: ComponentFixture<ModuleContainerComponent>;
+describe('SecureContainerComponent', () => {
+  let component: SecureContainerComponent;
+  let fixture: ComponentFixture<SecureContainerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModuleContainerComponent ]
+      declarations: [ SecureContainerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModuleContainerComponent);
+    fixture = TestBed.createComponent(SecureContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
