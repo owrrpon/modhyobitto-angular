@@ -1,0 +1,45 @@
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../assets/fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../assets/fonts/Roboto-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../assets/fonts/Roboto-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../assets/fonts/Roboto-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../assets/fonts/Roboto-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('../assets/fonts/Roboto-Light.eot'); /* IE9 Compat Modes */
+    src: url('../assets/fonts/Roboto-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../assets/fonts/Roboto-Light.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../assets/fonts/Roboto-Light.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../assets/fonts/Roboto-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../assets/fonts/Roboto-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RobotoBold';
+    src: url('../assets/fonts/Roboto-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../assets/fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../assets/fonts/Roboto-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../assets/fonts/Roboto-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../assets/fonts/Roboto-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../assets/fonts/Roboto-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('../assets/fonts/RobotoMono-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../assets/fonts/RobotoMono-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../assets/fonts/RobotoMono-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../assets/fonts/RobotoMono-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../assets/fonts/RobotoMono-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../assets/fonts/RobotoMono-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-display: swap;
+}
+
