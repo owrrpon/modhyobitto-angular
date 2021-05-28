@@ -10,7 +10,7 @@
         width: 10px;
     }
     &::-webkit-scrollbar-thumb{
-        background: lightgray;//todo
+        background: map-get($modhyobitto-colors, primary-dark);
     }
 }
 
@@ -21,7 +21,7 @@
 html,body{
     font-family: 'RobotoLight', sans-serif;
     font-size: 16px;
-    color: darkgrey;//todo
+    color: map-get($modhyobitto-colors, default-text);
 }
 
 //headings
@@ -51,15 +51,15 @@ h6, .h6{
 }
 
 a {
-    color: linkblue;//todo
+    color: map-get($modhyobitto-colors, primary);
     &:hover {
-        color: cyanblue; //todo
+        color: map-get($modhyobitto-colors, primary-light);
         text-decoration: none;
     }
 }
 
 button {
-    background: linkblue;//todo
+    background: map-get($modhyobitto-colors, primary);
     border: none;
     box-shadow: none;
     color: white;
@@ -73,25 +73,20 @@ button {
         min-width: 150px;
     }
     &.secondary-button{
-        background: bggray; //todo
-        color: linkblue; //todo
+        background: white;
+        color: map-get($modhyobitto-colors, primary);
     }
     &:hover, &:focus{
         outline: none;
     }
     &:not(.mat-focus-indicator){
         &:hover, &:focus{
-            background: cyanblue; //todo
+            background: map-get($modhyobitto-colors, primary-light);
             color: white;
             outline: none;
         }
         &:disabled{
-            background: white;
-            border: 1px solid lightgray; //todo
             opacity: 0.6;
-            &, .button-icon:before{
-                color: lightgray;//todo
-            }
         }
     }
     .button-icon{
