@@ -4,6 +4,21 @@
 //importing font-faces
 @import 'styles/font_families';
 
+//importing the good parts from Bootstrap
+//Dependencies
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+//Grid
+@import "~bootstrap/scss/vendor/rfs";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+//Reboot
+@import '~bootstrap/scss/reboot';
+//Utilities
+@import '~bootstrap/scss/utilities';
+@import '~bootstrap/scss/utilities/api';
+
 //importing icons
 @import 'styles/modhyobitto_icons';
 
