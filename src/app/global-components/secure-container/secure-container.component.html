@@ -1,4 +1,9 @@
-<p>secure-container works!</p>
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div class="secure-container container-fluid">
+    <app-header></app-header>
+    <div class="secure-container__content row justify-content-center">
+        <div class="col-10">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

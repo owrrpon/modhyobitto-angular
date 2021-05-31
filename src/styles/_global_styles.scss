@@ -7,3 +7,118 @@
 .modhyobitto-icon{
     font-size: 5rem;
 }
+
+.secure-container__content{
+    padding: 200px 0 120px 0;
+}
+
+.primary-header, .primary-navigation{
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 0 15px;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.primary-navigation{
+    top: 70px;
+    &.scrolled{
+        top: 0px;
+    }
+}
+
+.primary-header{
+    &.scrolled{
+        top: -200px;
+    }
+    
+    color: white;
+    background-color: map-get($modhyobitto-colors, primary-dark);
+    height: 70px;
+    .brand-logo{
+        height: 40px;
+    }
+}
+
+.primary-navigation{
+    background-color: map-get($modhyobitto-colors, primary-light);
+    box-shadow: 0 1px 5px map-get($modhyobitto-colors, shadow), 0 1px 1px map-get($modhyobitto-colors, shadow);
+}
+
+.primary-footer{
+    background-color: map-get($modhyobitto-colors, primary-dark);
+    color: white;
+    font-size: 0.95rem;
+    padding: 50px 0;
+    .primary-footer__sitemap{
+        .section-header{
+            font-family: 'RobotoBold', sans-serif;
+        }
+        .section-links{
+            list-style-type: none;
+            margin-top: 30px;
+            padding: 0px;
+            li{
+                margin-bottom: 10px;
+                a{
+                    color: white;
+                    &:hover{
+                        color: map-get($modhyobitto-colors, primary-light);
+                    }
+                }
+            }
+        }
+    }
+    .primary-footer__legal{
+        margin-top: 75px;
+        .primary-footer__legal-disclaimer{
+            border-top: 1px solid map-get($modhyobitto-colors, subtle-bg);
+            p{
+                margin-top: 30px;
+            }
+        }
+        .primary-footer__legal-copyright{
+            margin-top: 3rem;
+        }
+        .brand-logo{
+            height: 30px;
+            margin-right: 60px;
+        }
+    }
+}
+
+.side-bar{
+    padding-right: 30px;
+    .side-bar__heading{
+        color: map-get($modhyobitto-colors, primary-dark);
+        margin-bottom: 35px;
+    }
+}
+
+.page-content{
+    min-height: 400px;
+    .page-sub-section{
+        margin-bottom:  1.5rem;
+        .page-sub-section__header{
+            color: map-get($modhyobitto-colors, primary-dark);
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+        .page-sub-section__info{
+            margin-bottom: 0.5rem;
+            .page-sub-section__description{
+                margin-bottom: 0;
+                padding-left: 15px;
+            }
+        }
+        .page-sub-section__links{
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+    }
+}
+
+
