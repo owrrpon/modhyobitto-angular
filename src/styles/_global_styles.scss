@@ -45,7 +45,7 @@
 
 .primary-navigation{
     background-color: map-get($modhyobitto-colors, primary-light);
-    box-shadow: 0 1px 5px map-get($modhyobitto-colors, shadow), 0 1px 1px map-get($modhyobitto-colors, shadow);
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
 }
 
 .primary-footer{
