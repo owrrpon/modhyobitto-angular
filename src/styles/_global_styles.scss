@@ -109,7 +109,7 @@
             .side-bar__navigation-links--active{
                 color: map-get($modhyobitto-colors, primary-dark);
                 cursor: default;
-                font-weight: bolder;
+                font-family: 'Roboto';
                 &:hover{
                     text-decoration: none;
                 }
