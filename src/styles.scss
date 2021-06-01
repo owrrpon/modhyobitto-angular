@@ -19,6 +19,9 @@
 @import '~bootstrap/scss/utilities';
 @import '~bootstrap/scss/utilities/api';
 
+//importing Angular Material theme
+@import 'styles/material_theme';
+
 //importing icons
 @import 'styles/modhyobitto_icons';
 

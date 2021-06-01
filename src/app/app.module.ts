@@ -8,6 +8,8 @@ import { FooterComponent } from './global-components/footer/footer.component';
 import { DashboardComponent } from './global-components/dashboard/dashboard.component';
 import { LoginComponent } from './global-components/login/login.component';
 import { SecureContainerComponent } from './global-components/secure-container/secure-container.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppMaterialImporterModule } from './app-material-importer.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SecureContainerComponent } from './global-components/secure-container/s
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AppMaterialImporterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

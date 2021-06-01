@@ -7,10 +7,19 @@
         </div>
     </div>
     <div class="primary-navigation row justify-content-center">
-        <nav class="col-10" aria-labelledby="primary-navigation">
-            <a routerLink="dashboard">Dashboard</a>
-            <a routerLink="module-a">Module A</a>
-            <a routerLink="module-b">Module B</a>                
+        <nav mat-tab-nav-bar role="tablist" class="col-10" aria-labelledby="primary-navigation">
+            <a  mat-tab-link role="tab"
+                routerLink="dashboard"
+                routerLinkActive #rla_dashboard="routerLinkActive"
+                [active]="rla_dashboard.isActive">Dashboard</a>
+            <a  mat-tab-link role="tab"
+                routerLink="module-a"
+                routerLinkActive #rla_module_a="routerLinkActive"
+                [active]="rla_module_a.isActive">Module A</a>
+            <a  mat-tab-link role="tab"
+                routerLink="module-b"
+                routerLinkActive #rla_module_b="routerLinkActive"
+                [active]="rla_module_b.isActive">Module B</a>               
         </nav>
     </div>
 </header>
