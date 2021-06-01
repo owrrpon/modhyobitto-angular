@@ -96,6 +96,24 @@
         color: map-get($modhyobitto-colors, primary-dark);
         margin-bottom: 35px;
     }
+    .side-bar__navigation{
+        .side-bar__navigation-links{
+            list-style-type: none;
+            padding:0;
+            li{
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+            .side-bar__navigation-links--active{
+                color: map-get($modhyobitto-colors, primary-dark);
+                cursor: default;
+                font-weight: bolder;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
 }
 
 .page-content{

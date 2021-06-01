@@ -1,2 +1,32 @@
-<p>feature-module-a-container works!</p>
-<router-outlet></router-outlet>
+<div class="row">
+    <div class="col-3">
+        <section role="side-bar" class="side-bar">
+            <h1 class="side-bar__heading h2">Module A</h1>
+            <nav aria-labelledby="sectional-navigation" class="side-bar__navigation">
+                <ul class="side-bar__navigation-links">
+                    <li>
+                        <a routerLinkActive="side-bar__navigation-links--active"
+                            routerLink="page-a1">Page 1</a>
+                    </li>
+                    <li>
+                        <a routerLinkActive="side-bar__navigation-links--active"
+                            routerLink="page-a2">Page 2</a>
+                    </li>
+                    <li>
+                        <a routerLinkActive="side-bar__navigation-links--active"
+                            routerLink="page-a3">Page 3</a>
+                    </li>
+                    <li>
+                        <a routerLinkActive="side-bar__navigation-links--active"
+                            routerLink="page-a4">Page 4</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </div>
+    <div class="col-9">
+        <main role="main">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>
