@@ -92,9 +92,11 @@
 
 .side-bar{
     padding-right: 30px;
+    padding-top: 2rem;
     .side-bar__heading{
         color: map-get($modhyobitto-colors, primary-dark);
-        margin-bottom: 35px;
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
     .side-bar__navigation{
         .side-bar__navigation-links{
@@ -118,6 +120,7 @@
 
 .page-content{
     min-height: 400px;
+    //dashboard
     .page-sub-section{
         margin-bottom:  1.5rem;
         .page-sub-section__header{
@@ -135,6 +138,12 @@
         .page-sub-section__links{
             list-style-type: none;
             padding-left: 1rem;
+        }
+    }
+    .page-content__header{
+        margin-bottom: 3rem;
+        h1{
+            margin-bottom: 0;
         }
     }
 }
