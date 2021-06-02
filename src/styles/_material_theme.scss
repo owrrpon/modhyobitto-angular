@@ -3,16 +3,46 @@
 @use '~@angular/material' as mat;
 // Plus imports for other components in your app.
 
+// Making the application typography over-ride the default Angular Material typography
+$modhyobitto-typography: mat.define-typography-config(
+  $font-family: inherit
+);
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat.core();
+@include mat.core($modhyobitto-typography);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$modhyobitto-angular-primary: mat.define-palette(mat.$indigo-palette);
-$modhyobitto-angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$modhyobitto-palette: (
+  50: #f1f8e9,
+  100: #dcedc8,
+  200: #c5e1a5,
+  300: #aee571,
+  400: #9ccc65,
+  500: #8bc34a,
+  600: #7cb342,
+  700: #689f38,
+  800: #558b2f,
+  900: #4b830d, 
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: black,
+    600: black,
+    700: white,
+    800: white,
+    900: white
+  )
+ );
+
+$modhyobitto-angular-primary: mat.define-palette($modhyobitto-palette, 600, 300, 900);
+$modhyobitto-angular-accent: mat.define-palette($modhyobitto-palette, 900, 300, 600);
 
 // The warn palette is optional (defaults to red).
 $modhyobitto-angular-warn: mat.define-palette(mat.$red-palette);
