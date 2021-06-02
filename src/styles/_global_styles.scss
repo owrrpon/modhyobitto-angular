@@ -8,6 +8,38 @@
     font-size: 5rem;
 }
 
+.login-page{
+    height: 100vh;
+    .login-page__banner{
+        color: white;
+        background-color: map-get($modhyobitto-colors, primary-dark);
+        @include media-breakpoint-down(sm) {
+            height: 180px;
+        }
+        h1{
+            @include media-breakpoint-down(lg) {
+                font-size: 2rem;
+            }
+            @include media-breakpoint-only(sm) {
+                font-size: 1.5rem;
+            }
+        }
+        .brand-logo{
+            @include media-breakpoint-down(lg) {
+                width: 210px;
+            }
+            @include media-breakpoint-only(sm) {
+                width: 150px;
+            }
+        }
+    }
+    .login-page__form{
+        @include media-breakpoint-down(sm) {
+            height: calc(100vh - 180px);
+        }
+    }
+}
+
 .secure-container__content{
     padding: 220px 0 100px 0;
 }
