@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event.currentTarget.pageYOffset'])
   handleStickyNavigation(sroll_distance: Number){
-    this.is_page_scrolled = sroll_distance >= 150;
+    this.is_page_scrolled = sroll_distance >= 100;
   }
 
 }
