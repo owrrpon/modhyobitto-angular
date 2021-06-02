@@ -12,7 +12,7 @@
     height: 100vh;
     .login-page__banner{
         color: white;
-        background-color: map-get($modhyobitto-colors, primary-dark);
+        background-color: map-get($modhyobitto-colors, primary);
         @include media-breakpoint-down(sm) {
             height: 180px;
         }
