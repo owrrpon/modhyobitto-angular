@@ -48,6 +48,11 @@
     .mat-tab-nav-bar, .mat-tab-header{
         border-bottom: none;
     }
+    .mat-tab-links{
+        @include media-breakpoint-down(sm) {
+            justify-content: center;
+        }
+    }
     .mat-tab-link{
         color: map-get($modhyobitto-colors, default-text);
         text-decoration: none;
