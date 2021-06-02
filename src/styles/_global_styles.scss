@@ -9,7 +9,7 @@
 }
 
 .secure-container__content{
-    padding: 160px 0 80px 0;
+    padding: 220px 0 100px 0;
 }
 
 .primary-header, .primary-navigation{
@@ -45,6 +45,23 @@
 
 .primary-navigation{
     background-color: map-get($modhyobitto-colors, primary-light);
+    .mat-tab-nav-bar, .mat-tab-header{
+        border-bottom: none;
+    }
+    .mat-tab-link{
+        color: map-get($modhyobitto-colors, default-text);
+        text-decoration: none;
+        text-transform: uppercase;
+        &.mat-tab-label-active, &:hover{
+            opacity: 1;
+        }
+    }
+    .mat-ink-bar{
+        height: 4px;
+    }
+}
+
+.primary-header, .primary-navigation{
     box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
 }
 
