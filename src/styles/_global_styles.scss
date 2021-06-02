@@ -12,63 +12,59 @@
     padding: 220px 0 100px 0;
 }
 
-.primary-header, .primary-navigation{
+.primary-header-container{
     position: fixed;
     left: 0;
     right: 0;
-    z-index: 999;
-    padding: 0 15px;
-    transition-property: all;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-}
-
-.primary-navigation{
-    top: 70px;
+    top: 0px;
     &.scrolled{
-        top: 0px;
+        top: -70px;
     }
-}
 
-.primary-header{
-    &.scrolled{
-        top: -200px;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    z-index: 999;
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);    
+    
+    .primary-header, .primary-navigation{
+        padding: 0 15px;
     }
     
-    color: white;
-    background-color: map-get($modhyobitto-colors, primary-dark);
-    height: 70px;
-    .brand-logo{
-        height: 40px;
+    .primary-header{
+        color: white;
+        background-color: map-get($modhyobitto-colors, primary-dark);
+        height: 70px;
+        .brand-logo{
+            height: 40px;
+        }
+    }
+    
+    .primary-navigation{
+        background-color: map-get($modhyobitto-colors, primary-light);
+        .mat-tab-nav-bar, .mat-tab-header{
+            border-bottom: none;
+        }
+        .mat-tab-links{
+            @include media-breakpoint-down(sm) {
+                justify-content: center;
+            }
+        }
+        .mat-tab-link{
+            color: map-get($modhyobitto-colors, default-text);
+            text-decoration: none;
+            text-transform: uppercase;
+            &.mat-tab-label-active, &:hover{
+                opacity: 1;
+            }
+        }
+        .mat-ink-bar{
+            height: 4px;
+        }
     }
 }
 
-.primary-navigation{
-    background-color: map-get($modhyobitto-colors, primary-light);
-    .mat-tab-nav-bar, .mat-tab-header{
-        border-bottom: none;
-    }
-    .mat-tab-links{
-        @include media-breakpoint-down(sm) {
-            justify-content: center;
-        }
-    }
-    .mat-tab-link{
-        color: map-get($modhyobitto-colors, default-text);
-        text-decoration: none;
-        text-transform: uppercase;
-        &.mat-tab-label-active, &:hover{
-            opacity: 1;
-        }
-    }
-    .mat-ink-bar{
-        height: 4px;
-    }
-}
 
-.primary-header, .primary-navigation{
-    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
-}
 
 .primary-footer{
     background-color: map-get($modhyobitto-colors, primary-dark);
