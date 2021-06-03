@@ -17,7 +17,7 @@
             height: 180px;
         }
         h1{
-            font-family: 'RobotoBold';
+            font-family: 'RobotoBold', sans-serif;
             @include media-breakpoint-down(lg) {
                 font-size: 3rem;
             }
@@ -85,6 +85,10 @@
         height: 70px;
         .brand-logo{
             height: 40px;
+        }
+        .brand-name{
+            font-size: 2rem;
+            font-family: 'RobotoBold', sans-serif;
         }
     }
     
