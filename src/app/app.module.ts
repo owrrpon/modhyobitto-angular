@@ -10,6 +10,8 @@ import { LoginComponent } from './global-components/login/login.component';
 import { SecureContainerComponent } from './global-components/secure-container/secure-container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialImporterModule } from './app-material-importer.module';
+import { SharedUtilitiesModule } from './modules/__shared-utilities/shared-utilities.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { AppMaterialImporterModule } from './app-material-importer.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AppMaterialImporterModule
+    AppMaterialImporterModule,
+    SharedUtilitiesModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

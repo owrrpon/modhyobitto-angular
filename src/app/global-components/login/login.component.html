@@ -8,8 +8,37 @@
                     alt="Modhyobitto Logo">
             </div>
         </div>
-        <div class="col-12 col-sm-8 col-md-7 col-lg-6 login-page__form">
-            
+        <div class="col-12 col-sm-8 col-md-7 col-lg-6 login-form-container">
+            <main role="main">
+                <form class="login-form" [formGroup]="login_form" (ngSubmit)="initiateLogin()">
+                    <div class="login-form__fields">
+                        <app-modhyobitto-form-field
+                            [parent_FG]="login_form"
+                            control_name="username"
+                            label="Username"
+                            placeholder="Enter Username"
+                            maxlength="15">
+                        </app-modhyobitto-form-field>
+                        <app-modhyobitto-form-field
+                            [parent_FG]="login_form"
+                            control_name="password"
+                            type="password"
+                            label="Password"
+                            placeholder="Enter Password"
+                            maxlength="15">
+                        </app-modhyobitto-form-field>
+                    </div>
+                    <footer class="login-form__footer">
+                        <button 
+                            matRipple
+                            class="primary-button"
+                            type="submit"
+                            [disabled]="!login_form.valid">
+                            Login
+                        </button>
+                    </footer>
+                </form>
+            </main>
         </div>
     </div>
 </div>

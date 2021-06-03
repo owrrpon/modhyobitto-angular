@@ -68,18 +68,15 @@ button {
     border: none;
     box-shadow: none;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
     height: 50px;
     padding: 0 20px;
-    text-align: left;
+    text-transform: uppercase;
     &.primary-button, &.secondary-button{
         min-width: 150px;
     }
     &.secondary-button{
-        background: white;
-        color: map-get($modhyobitto-colors, primary);
+        background: map-get($modhyobitto-colors, primary-dark);
     }
     &:hover, &:focus{
         outline: none;
@@ -87,11 +84,12 @@ button {
     &:not(.mat-focus-indicator){
         &:hover, &:focus{
             background: map-get($modhyobitto-colors, primary-light);
-            color: white;
+            color: map-get($modhyobitto-colors, default-text);
             outline: none;
         }
         &:disabled{
-            opacity: 0.6;
+            background: map-get($modhyobitto-colors, disabled-bg);
+            color: map-get($modhyobitto-colors, disabled-text);
         }
     }
     .button-icon{

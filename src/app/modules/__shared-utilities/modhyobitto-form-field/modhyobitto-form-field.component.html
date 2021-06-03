@@ -1,0 +1,30 @@
+<div class="modhyobitto-form-field" [formGroup]="parent_FG">
+    <mat-form-field appearance="fill">
+        <mat-label>
+            {{label}}
+            <span aria-hidden="true" *ngIf="required" class="placeholder-required"> *</span>
+        </mat-label>
+        <!-- For select menus -->
+        <ng-container *ngIf="type=='select'">
+            <mat-select [formControlName]="control_name">
+                <mat-option *ngFor="let key of select_option_keys" [value]="select_option_map[key]">{{key}}</mat-option>
+            </mat-select>
+        </ng-container>
+        <!-- For text fields -->
+        <ng-container *ngIf="type!='select'">
+            <input 
+                matInput
+                placeholder="{{placeholder}}"
+                [formControlName]="control_name"
+                [attr.maxlength]="maxlength"
+                [type]="type">
+        </ng-container>
+        <mat-error>
+            {{control.hasError('required')?
+                (required_error || 'This field can not be left blank.')
+                :   (control.hasError('message')?
+                        control.getError('message')
+                        :   'Please enter valid data.')}}
+        </mat-error>
+    </mat-form-field>
+</div>

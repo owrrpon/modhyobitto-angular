@@ -34,9 +34,24 @@
             }
         }
     }
-    .login-page__form{
+    .login-form-container{
+        display:flex;
+        align-items: center;
+        justify-content: center;
         @include media-breakpoint-down(sm) {
             height: calc(100vh - 180px);
+        }
+        main{
+            min-height: 330px;
+        }
+        .login-form{
+            width: 300px;
+            .login-form__footer{
+                margin: 25px 0;
+                button{
+                    width: 100%;
+                }
+            }
         }
     }
 }
@@ -199,4 +214,53 @@
     }
 }
 
+//form field
 
+.modhyobitto-form-field{
+    mat-form-field{
+        width: 100%;
+        &.mat-form-field-appearance-fill{
+            .mat-form-field-flex{
+                background-color: map-get($modhyobitto-colors, subtle-bg);
+                border-radius: 0;
+                border: 1px solid transparent;
+                .mat-form-field-infix{
+                    padding-left: 0.5em;
+                    padding-right: 0.5em;
+                }
+            }
+            // &.mat-form-field-disabled{
+            //     .mat-form-field-flex{
+            //         background-color: map-get($modhyobitto-colors, subtle-bg);
+            //     }
+            //     .mat-input-element:disabled, mat-form-field-label{
+            //         color: inherit;
+            //     }
+            // }
+            .mat-form-field-wrapper{
+                margin-bottom: 12px;
+            }
+            .mat-form-field-label{
+                left: 8px;                
+            }
+            .mat-form-field-underline{
+                opacity: 0;
+            }
+        }
+        &.mat-focused{
+            .mat-form-field-flex{
+                border: 1px solid map-get($modhyobitto-colors, primary);
+            }
+            &.mat-form-field-invalid{
+                .mat-form-field-flex{
+                    border: 1px solid map-get($modhyobitto-colors, notification);
+                }
+            }
+        }
+        &, &.mat-focused{
+            .placeholder-required{
+                color: map-get($modhyobitto-colors, notification);
+            }
+        }
+    }
+}
