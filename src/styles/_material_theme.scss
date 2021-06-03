@@ -41,11 +41,36 @@ $modhyobitto-palette: (
   )
  );
 
+ $modhyobitto-warn-palette: (
+  50: #fdeaee,
+  100: #fbcad2,
+  200: #ea959b,
+  300: #de6c74,
+  400: #e84853,
+  500: #ed323b,
+  600: #de2839,
+  700: #cc1d33,
+  800: #bf152c,
+  900: #b00020, 
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: black,
+    600: white,
+    700: white,
+    800: white,
+    900: white
+  )
+ );
+
 $modhyobitto-angular-primary: mat.define-palette($modhyobitto-palette, 600, 300, 900);
 $modhyobitto-angular-accent: mat.define-palette($modhyobitto-palette, 900, 300, 600);
 
 // The warn palette is optional (defaults to red).
-$modhyobitto-angular-warn: mat.define-palette(mat.$red-palette);
+$modhyobitto-angular-warn: mat.define-palette($modhyobitto-warn-palette, 900);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
