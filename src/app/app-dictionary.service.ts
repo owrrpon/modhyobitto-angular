@@ -50,11 +50,6 @@ export class AppDictionaryService {
 
   getAPI(key: string){
     let complete_URL = this.settings.API_full_hostname+this.service_URLs[key];
-    // For our sample application here, we have simply considered development as the localhost 
-    // using JSONs and production for any subsequent environment.
-    if(!environment.production){
-      complete_URL+='.json';
-    }
     return complete_URL;
   }
 }
