@@ -1,18 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { AppUtilityService } from 'src/app/app-utility.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   login_form!: FormGroup;
 
+  // Subscription
+  private initiate_login_sub!: Subscription;
+
   constructor(
-    private router: Router
+    private global_utilities: AppUtilityService
   ) { }
 
   ngOnInit(): void {
@@ -23,7 +27,21 @@ export class LoginComponent implements OnInit {
   }
 
   initiateLogin(){
-    this.router.navigateByUrl('/secure');
+    this.initiate_login_sub = this.global_utilities.login(this.login_form.value).subscribe(
+      (data)=>{
+        this.global_utilities.navigateToURL('/secure');
+      },
+      (error)=>{
+        //TODO
+      }
+    );
+  }
+
+  ngOnDestroy(): void{
+    this.global_utilities.unsubscribeAll([
+      this.initiate_login_sub
+    ]);
+
   }
 
 }

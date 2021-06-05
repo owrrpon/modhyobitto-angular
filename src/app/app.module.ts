@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialImporterModule } from './app-material-importer.module';
 import { SharedUtilitiesModule } from './modules/__shared-utilities/shared-utilities.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppInterceptor } from './app.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     AppMaterialImporterModule,
     SharedUtilitiesModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

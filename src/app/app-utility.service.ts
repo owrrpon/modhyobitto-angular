@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { AppDictionaryService } from './app-dictionary.service';
@@ -177,6 +177,16 @@ export class AppUtilityService extends AppDictionaryService {
   }
 
   */
+
+  unsubscribeAll(subs: Subscription[]){
+    let sub_count = subs.length;
+    for(let i=0; i < sub_count; i++){
+      let current_sub = subs[i];
+      if(!!current_sub){
+        current_sub.unsubscribe();
+      }
+    }
+  }
 
   setGlobalData(key: string, value: any){
     this.globals[key] = value;
