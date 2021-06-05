@@ -1,1 +1,5 @@
 <router-outlet (activate)="global_utilities.onRouteActivation()"></router-outlet>
+<div class="loader-container" *ngIf="is_loader_showing">
+    <mat-spinner strokeWidth="4"></mat-spinner>   
+    <p class="loader-container__text">Loading</p>
+</div>
