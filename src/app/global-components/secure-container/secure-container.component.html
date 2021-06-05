@@ -2,7 +2,7 @@
     <app-header></app-header>
     <div class="secure-container__content row justify-content-center">
         <div class="col-10">
-            <router-outlet></router-outlet>
+            <router-outlet (activate)="global_utilities.onRouteActivation()"></router-outlet>
         </div>
     </div>
     <app-footer></app-footer>

@@ -26,7 +26,7 @@
     </div>
     <div class="col-9">
         <main role="main">
-            <router-outlet></router-outlet>
+            <router-outlet (activate)="global_utilities.onRouteActivation()"></router-outlet>
         </main>
     </div>
 </div>

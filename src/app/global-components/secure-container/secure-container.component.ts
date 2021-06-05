@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppUtilityService } from 'src/app/app-utility.service';
 
 @Component({
   selector: 'app-secure-container',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecureContainerComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public global_utilities: AppUtilityService
+  ) { }
 
   ngOnInit(): void {
   }

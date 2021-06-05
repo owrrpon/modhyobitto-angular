@@ -159,6 +159,10 @@ export class AppUtilityService extends AppDictionaryService {
     }, 200);
   }
 
+  onRouteActivation(){
+    this.scrollToElement('.page-content',100);
+  }
+
   navigateToURL(URL: string){
     this.router.navigateByUrl(URL);
   }
