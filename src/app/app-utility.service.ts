@@ -97,7 +97,8 @@ export class AppUtilityService extends AppDictionaryService {
       this.getAPI('login'),
       (response: any) => {
         if(response.responseCode == 200){
-          return {'data': response};
+          return (user_credentials.username=="error")?
+                  {'error': response}: {'data': response};
         }else{
           return {'error': response};
         }
