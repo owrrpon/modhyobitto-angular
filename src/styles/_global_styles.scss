@@ -312,4 +312,8 @@
 // Snack bar
 .mat-simple-snackbar-action{
     color: map-get($modhyobitto-colors, primary-light);
+    button:focus{
+        outline: 1px solid map-get($modhyobitto-colors, primary-light);
+        outline-offset: 0;
+    }
 }
