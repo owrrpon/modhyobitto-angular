@@ -6,6 +6,7 @@ import { AppDictionaryService } from './app-dictionary.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class AppUtilityService extends AppDictionaryService {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private snackbar: MatSnackBar
   ) { super(); }
 
   serviceWrapper(
@@ -37,6 +39,9 @@ export class AppUtilityService extends AppDictionaryService {
       this.globals.ongoing_request_count ++;
       this.globals.loading_animation_control.next(true);
     }
+
+    // Hide service errors if any
+    this.hideServiceError();
 
     // For local API requests, fetch the JSON file instead
     if(!environment.production){
@@ -165,6 +170,15 @@ export class AppUtilityService extends AppDictionaryService {
 
   navigateToURL(URL: string){
     this.router.navigateByUrl(URL);
+  }
+
+  showServiceError(message?: string){
+    let snackar_ref = this.snackbar.open(message || this.error_messages.service_failure, 'OK');
+    this.setGlobalData('service_error_snackbar',snackar_ref);
+  }
+
+  hideServiceError(){
+    this.getGlobalData('service_error_snackbar')?.dismiss();
   }
 
   /* TODO

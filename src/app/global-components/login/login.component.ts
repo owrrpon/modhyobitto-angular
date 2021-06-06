@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.global_utilities.navigateToURL('/secure');
       },
       (error)=>{
-        //TODO
+        this.global_utilities.showServiceError();
       }
     );
   }

@@ -10,7 +10,7 @@ export class AppDictionaryService {
   //  This is not the central data store and hence, does not store the application state.
 
   error_messages = {
-    service_failure: 'Our apologies, this site is experiencing some technical difficulties. Please refresh the page pr try again.',
+    service_failure: 'Our apologies, this site is experiencing some technical difficulties. Please refresh the page or try again.',
     validation: {
       percentage: 'Enter a percentage with max 2 decimal places.'
     }

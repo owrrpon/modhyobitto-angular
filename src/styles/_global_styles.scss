@@ -41,9 +41,6 @@
         @include media-breakpoint-down(sm) {
             height: calc(100vh - 180px);
         }
-        main{
-            min-height: 330px;
-        }
         .login-form{
             width: 300px;
             .login-form__footer{
@@ -310,4 +307,9 @@
             }
         }
     }
+}
+
+// Snack bar
+.mat-simple-snackbar-action{
+    color: map-get($modhyobitto-colors, primary-light);
 }
