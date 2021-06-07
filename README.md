@@ -6,11 +6,11 @@ This codebase was prepared as a project to put together all the little aha momen
 
 I have prepared a detailed guide on how to set up and navigate the codebase:
 
-[Introduction to optimized Angular codebase setup](https://owrrpon.medium.com/introduction-to-optimized-angular-codebase-setup-d60552dcb59a)
-[Part 1 — Angular Component and Routing Setup](https://owrrpon.medium.com/optimized-angular-component-and-routing-setup-f39d675ac3dc)
-[Part 2 — Styling Framework Setup](https://owrrpon.medium.com/optimized-styling-framework-setup-for-angular-add6646b19d9)
-[Part 3 — Including Angular Material](https://owrrpon.medium.com/optimized-angular-material-setup-21ea8ea2b8)
-[Part 4 — Service/ API Integration](https://owrrpon.medium.com/optimized-service-api-integration-for-angular-476eac8dc5c9)
+- [Introduction to optimized Angular codebase setup](https://owrrpon.medium.com/introduction-to-optimized-angular-codebase-setup-d60552dcb59a)
+- [Part 1 — Angular Component and Routing Setup](https://owrrpon.medium.com/optimized-angular-component-and-routing-setup-f39d675ac3dc)
+- [Part 2 — Styling Framework Setup](https://owrrpon.medium.com/optimized-styling-framework-setup-for-angular-add6646b19d9)
+- [Part 3 — Including Angular Material](https://owrrpon.medium.com/optimized-angular-material-setup-21ea8ea2b8)
+- [Part 4 — Service/ API Integration](https://owrrpon.medium.com/optimized-service-api-integration-for-angular-476eac8dc5c9)
 
 
 That being said, I keep updating this repo beyond what is mentioned in the above guide. 
