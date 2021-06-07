@@ -29,7 +29,8 @@ export class PageA1Component implements OnInit {
       select: new FormControl(),
       date: new FormControl(),
       start_date: new FormControl(),
-      end_date: new FormControl()
+      end_date: new FormControl(),
+      textarea: new FormControl()
     });
   }
 

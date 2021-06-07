@@ -41,6 +41,14 @@
                         (keydown)="false"> -->
                 </mat-date-range-input>                   
             </ng-container>
+            <!-- For text areas -->
+            <ng-container *ngSwitchCase="'textarea'">
+                <textarea 
+                matInput
+                placeholder="{{placeholder}}"
+                [formControlName]="control_name"
+                [attr.maxlength]="maxlength"></textarea>
+            </ng-container>
             <!-- For text fields -->
             <ng-container *ngSwitchDefault>
                 <input 
