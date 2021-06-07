@@ -69,7 +69,6 @@ button {
     box-shadow: none;
     color: white;
     font-family: 'Roboto', sans-serif;
-    height: 50px;
     padding: 0 20px;
     text-transform: uppercase;
     &.primary-button, &.secondary-button{
@@ -82,6 +81,7 @@ button {
         outline: none;
     }
     &:not(.mat-focus-indicator){
+        height: 50px;
         &:hover, &:focus{
             background: map-get($modhyobitto-colors, primary-light);
             color: map-get($modhyobitto-colors, default-text);

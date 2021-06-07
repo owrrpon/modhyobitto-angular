@@ -4,27 +4,64 @@
             {{label}}
             <span aria-hidden="true" *ngIf="required" class="placeholder-required"> *</span>
         </mat-label>
-        <!-- For select menus -->
-        <ng-container *ngIf="type=='select'">
-            <mat-select [formControlName]="control_name">
-                <mat-option *ngFor="let key of select_option_keys" [value]="select_option_map[key]">{{key}}</mat-option>
-            </mat-select>
-        </ng-container>
-        <!-- For text fields -->
-        <ng-container *ngIf="type!='select'">
-            <input 
+        <ng-container [ngSwitch]="type">
+            <!-- For select menus -->
+            <ng-container *ngSwitchCase="'select'">
+                <mat-select [formControlName]="control_name">
+                    <mat-option *ngFor="let key of select_option_keys" [value]="select_option_map[key]">{{key}}</mat-option>
+                </mat-select>
+            </ng-container>
+            <!-- For date picker -->
+            <ng-container *ngSwitchCase="'date'">
+                <input 
+                    matInput
+                    [matDatepicker]="datepicker"
+                    [formControlName]="control_name">
+                    <!-- (focus)="picker.open()"
+                    (click)="picker.open()"
+                    (keydown)="false"> -->
+                    
+            </ng-container>
+            <!-- For date range picker -->
+            <ng-container *ngSwitchCase="'daterange'">
+                <mat-date-range-input [rangePicker]="daterangepicker">
+                    <input 
+                        matStartDate
+                        placeholder="Start Date"
+                        [formControlName]="control_name">
+                        <!-- (focus)="picker.open()"
+                        (click)="picker.open()"
+                        (keydown)="false"> -->
+                    <input 
+                        matEndDate
+                        placeholder="End Date"
+                        [formControlName]="enddate_control_name">
+                        <!-- (focus)="picker.open()"
+                        (click)="picker.open()"
+                        (keydown)="false"> -->
+                </mat-date-range-input>                   
+            </ng-container>
+            <!-- For text fields -->
+            <ng-container *ngSwitchDefault>
+                <input 
                 matInput
                 placeholder="{{placeholder}}"
                 [formControlName]="control_name"
                 [attr.maxlength]="maxlength"
                 [type]="type">
+            </ng-container>
         </ng-container>
+        <!-- matSuffix works on descendents only -->
+        <mat-datepicker-toggle matSuffix [for]="datepicker" *ngIf="type=='date'"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker></mat-datepicker>
+        <mat-datepicker-toggle matSuffix [for]="daterangepicker" *ngIf="type=='daterange'"></mat-datepicker-toggle>
+        <mat-date-range-picker #daterangepicker></mat-date-range-picker>
         <mat-error>
             {{control.hasError('required')?
                 (required_error || 'This field can not be left blank.')
                 :   (control.hasError('message')?
                         control.getError('message')
-                        :   'Please enter valid data.')}}
+                        :   invalid_error)}}
         </mat-error>
     </mat-form-field>
 </div>

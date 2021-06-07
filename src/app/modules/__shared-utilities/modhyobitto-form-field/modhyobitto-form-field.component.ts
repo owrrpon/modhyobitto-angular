@@ -10,6 +10,7 @@ export class ModhyobittoFormFieldComponent implements OnInit, OnChanges {
 
   @Input() label!: string;
   @Input() required_error!: string;
+           invalid_error: string = 'Please enter valid data.'; 
   @Input() placeholder!: string;
   @Input() maxlength!: string;
   @Input() type: string = "text";
@@ -21,6 +22,7 @@ export class ModhyobittoFormFieldComponent implements OnInit, OnChanges {
   @Input() parent_FG!: FormGroup;
   @Input() control_name!: string;
            control!: AbstractControl;
+  @Input() enddate_control_name!: string;
 
   constructor() { }
 
@@ -36,6 +38,11 @@ export class ModhyobittoFormFieldComponent implements OnInit, OnChanges {
     if(!!this.control.validator){
       let validators = this.control.validator({} as AbstractControl);
       this.required = !!validators && !!validators.required;
+    }
+
+    //update the invalid error for date fields
+    if(this.type == 'date' || this.type == 'daterange'){
+      this.invalid_error = 'Please use MM/DD/YYYY format.';
     }
   }
 
