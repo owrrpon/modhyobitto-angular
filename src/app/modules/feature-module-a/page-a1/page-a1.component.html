@@ -1,8 +1,98 @@
 <article class="page-content page-a1">
     <div class="page-content__header">
-        <h1>Page One</h1>
+        <h1>Form Fields</h1>
     </div>
-    <p class="page-content__description">
-        I met a girl who sang the blues and I asked her for some happy news but she just smiled and turned away. I went down to the sacred store where I'd heard the music years before but the man there said the music wouldn't play. And in the streets the children screamed. The lovers cried, and the poets dreamed but not a word was spoken. The church bells all were broken and the three men I admire most - the Father, Son and the Holy Ghost. They caught the last train for the coast. The day the music died.
-    </p>
+    <section class="form-fields-demo">
+        <form class="form-fields-demo__form" 
+                [formGroup]="formfield_demo_form" 
+                (ngSubmit)="initiateDemoSubmit()"
+                #form_ref>
+        <div class="form-fields-demo__fields">
+            <div class="row">
+                <div class="col-6">
+                    <app-modhyobitto-form-field
+                        [parent_FG]="formfield_demo_form"
+                        control_name="text"
+                        label="Text Field"
+                        placeholder="Enter text field value"
+                        maxlength="7">
+                    </app-modhyobitto-form-field>
+                </div>
+                <div class="col-6">
+                    <app-modhyobitto-form-field
+                        [parent_FG]="formfield_demo_form"
+                        control_name="required_text"
+                        label="Required Text Field"
+                        placeholder="Enter required value"
+                        maxlength="7">
+                    </app-modhyobitto-form-field>
+                </div>
+                <div class="col-6">
+                    <app-modhyobitto-form-field
+                        [parent_FG]="formfield_demo_form"
+                        control_name="custom_required_text"
+                        label="Custom Required Field"
+                        placeholder="Enter required value"
+                        required_error="Can Your Majesty please fill this up?"
+                        maxlength="7">
+                    </app-modhyobitto-form-field>
+                </div>
+                <div class="col-6">
+                    <app-modhyobitto-form-field
+                        [parent_FG]="formfield_demo_form"
+                        control_name="generic_validation"
+                        label="Generic Validation"
+                        placeholder="Enter a number > 10"
+                        maxlength="7">
+                    </app-modhyobitto-form-field>
+                </div>
+                <div class="col-6">
+                    <app-modhyobitto-form-field
+                        [parent_FG]="formfield_demo_form"
+                        control_name="custom_validation"
+                        label="Custom Validation"
+                        placeholder="Enter percentage value"
+                        maxlength="7">
+                    </app-modhyobitto-form-field>
+                </div>
+                <div class="col-6">
+                    <app-modhyobitto-form-field
+                        [parent_FG]="formfield_demo_form"
+                        control_name="select"
+                        label="Select Menu"
+                        type="select"
+                        [select_option_map]="select_option_list">
+                    </app-modhyobitto-form-field>
+                </div>
+                <div class="col-6">
+                    <app-modhyobitto-form-field
+                        [parent_FG]="formfield_demo_form"
+                        control_name="date"
+                        label="Select Date"
+                        type="date">
+                    </app-modhyobitto-form-field>
+                </div>
+                <div class="col-6">
+                    <app-modhyobitto-form-field
+                        [parent_FG]="formfield_demo_form"
+                        control_name="start_date"
+                        enddate_control_name="end_date"
+                        label="Select Date Range"
+                        type="daterange">
+                    </app-modhyobitto-form-field>
+                </div>
+            </div>
+        </div>
+        <footer class="form-fields-demo__footer">
+            <button matRipple
+                class="secondary-button"
+                type="button"
+                (click)="resetDemoForm()">Reset</button>
+            <button matRipple
+                class="primary-button"
+                type="submit"
+                [disabled]="!formfield_demo_form.valid">Submit</button>
+        </footer>
+        </form>
+    </section>
 </article>

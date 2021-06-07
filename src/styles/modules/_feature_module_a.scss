@@ -1,1 +1,12 @@
 //This file will have feature module specific styles that will not be used outside this particular module.
+
+.form-fields-demo{
+    .form-fields-demo__footer{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 3rem;
+        button{
+            margin-left: 2rem;
+        }
+    }
+}

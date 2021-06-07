@@ -7,6 +7,9 @@ import { PageA1Component } from './page-a1/page-a1.component';
 import { PageA2Component } from './page-a2/page-a2.component';
 import { PageA3Component } from './page-a3/page-a3.component';
 import { PageA4Component } from './page-a4/page-a4.component';
+import { SharedUtilitiesModule } from '../__shared-utilities/shared-utilities.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppMaterialImporterModule } from 'src/app/app-material-importer.module';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { PageA4Component } from './page-a4/page-a4.component';
   ],
   imports: [
     CommonModule,
-    FeatureModuleARoutingModule
+    ReactiveFormsModule,
+    FeatureModuleARoutingModule,
+    SharedUtilitiesModule,
+    AppMaterialImporterModule
   ]
 })
 export class FeatureModuleAModule { }
