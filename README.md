@@ -15,7 +15,7 @@ I have prepared a detailed guide on how to set up and navigate the codebase:
 
 That being said, I keep updating this repo beyond what is mentioned in the above guide. 
 
-The idea is to easily help others and me in easily bootstrapping a practical Angular application. Knowing a framework is one thing and structuring a codebase is quite another. There is no "one perfect" way of doing things. This is simply one that has helped me in developing application codebases that looked clean, were easy to manage and fun to develop.
+The idea is to help others and me in easily bootstrapping a practical Angular application. Knowing a framework is one thing and structuring a codebase is quite another. There is no "one perfect" way of doing things. This is simply the one that has helped me in developing applications that had clean codebases, were easy to manage and fun to develop.
 
 
 ## Development server
