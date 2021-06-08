@@ -320,6 +320,9 @@
     }
 }
 .modhyobitto-checkbox, .modhyobitto-radio{
+    .placeholder-required{
+        color: map-get($modhyobitto-colors, notification);
+    }
     .mat-error{
         font-size:75%;
     }
