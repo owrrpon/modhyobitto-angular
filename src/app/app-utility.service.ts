@@ -128,8 +128,8 @@ export class AppUtilityService extends AppDictionaryService {
     );
   }
 
-  displayBanner(text: string){
-    this.globals.banner_control.next(text);
+  displayBanner(text?: string){
+    this.globals.banner_control.next(text ||  this.error_messages.service_failure);
   }
 
   /*

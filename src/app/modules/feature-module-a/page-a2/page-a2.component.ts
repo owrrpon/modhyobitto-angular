@@ -16,7 +16,7 @@ export class PageA2Component implements OnInit {
   }
 
   openBanner(){
-    this.global_utilities.displayBanner(this.global_utilities.error_messages.service_failure);
+    this.global_utilities.displayBanner();
   }
 
 }

@@ -9,7 +9,7 @@ import { AppUtilityService } from 'src/app/app-utility.service';
 })
 export class BannerComponent implements OnInit, OnDestroy {
 
-  @Input() is_page_scrolled!: boolean;
+  @Input() is_page_scrolled: boolean = false;
   
   is_banner_open: boolean = false;
   banner_text!: string;
