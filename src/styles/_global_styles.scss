@@ -112,7 +112,7 @@
         }
     }
 }
-
+//banner
 .primary-banner{
     background: white;
     box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
@@ -131,11 +131,15 @@
         font-size: 0.875rem;
         justify-content: center;
         min-height: 50px;
+        .primary-banner__graphic-text-wrapper, .primary-banner__action{
+            padding: 1rem;
+            margin: 0 1rem;
+        }
         .primary-banner__action{
-            margin-left: 3rem;
             button{
                 background: transparent;
                 color: map-get($modhyobitto-colors, primary);
+                font-family: 'RobotoBold', sans-serif;;
                 height: 30px;
                 &:hover, &:focus{
                     color: map-get($modhyobitto-colors, primary-dark);
@@ -148,6 +152,15 @@
         &.scrolled{
             top: 48px;
         }
+    }
+}
+
+// Snack bar
+.mat-simple-snackbar-action{
+    color: map-get($modhyobitto-colors, primary-light);
+    button:focus{
+        outline: 1px solid map-get($modhyobitto-colors, primary-light);
+        outline-offset: 0;
     }
 }
 
@@ -362,14 +375,5 @@
     }
     .mat-error{
         font-size:75%;
-    }
-}
-
-// Snack bar
-.mat-simple-snackbar-action{
-    color: map-get($modhyobitto-colors, primary-light);
-    button:focus{
-        outline: 1px solid map-get($modhyobitto-colors, primary-light);
-        outline-offset: 0;
     }
 }
