@@ -113,6 +113,43 @@
     }
 }
 
+.primary-banner{
+    background: white;
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 55px;
+    transition: top 0.5s cubic-bezier(0, 1, 0.5, 1);
+    &.scrolled{
+        top: -15px;
+    }
+    .primary-banner__content{
+        display: flex;
+        align-items: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.875rem;
+        justify-content: center;
+        min-height: 50px;
+        .primary-banner__action{
+            margin-left: 3rem;
+            button{
+                background: transparent;
+                color: map-get($modhyobitto-colors, primary);
+                height: 30px;
+                &:hover, &:focus{
+                    color: map-get($modhyobitto-colors, primary-dark);
+                }
+            }
+        }
+    }
+    &.open{
+        top: 118px;
+        &.scrolled{
+            top: 48px;
+        }
+    }
+}
 
 
 .primary-footer{

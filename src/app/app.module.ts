@@ -14,6 +14,7 @@ import { SharedUtilitiesModule } from './modules/__shared-utilities/shared-utili
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppInterceptor } from './app.interceptor';
+import { BannerComponent } from './global-components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AppInterceptor } from './app.interceptor';
     FooterComponent,
     DashboardComponent,
     LoginComponent,
-    SecureContainerComponent
+    SecureContainerComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,

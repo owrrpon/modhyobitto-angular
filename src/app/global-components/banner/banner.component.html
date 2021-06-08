@@ -1,0 +1,14 @@
+<div class="primary-banner" role="banner" [ngClass]="{'scrolled' : is_page_scrolled, 'open' : is_banner_open}">
+    <div class="primary-banner__content"
+        role="status"
+        aria-live="assertive">
+    <div class="primary-banner__graphic-text-wrapper">
+        <div class="primary-banner__text">
+       {{banner_text}}
+        </div>
+    </div>
+    <div class="primary-banner__action">
+        <button matRipple (click)="dismissBanner()">Dismiss</button>
+    </div>
+    </div>
+</div>

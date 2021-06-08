@@ -15,7 +15,8 @@ export class AppUtilityService extends AppDictionaryService {
 
   private globals: { [key:string]: any } = {
     ongoing_request_count: 0,
-    loading_animation_control: new Subject<any>()
+    loading_animation_control: new Subject<any>(),
+    banner_control: new Subject<any>()
   };
 
   constructor(
@@ -125,6 +126,10 @@ export class AppUtilityService extends AppDictionaryService {
         responseType: "blob"
       }
     );
+  }
+
+  displayBanner(text: string){
+    this.globals.banner_control.next(text);
   }
 
   /*

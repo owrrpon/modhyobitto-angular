@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppUtilityService } from 'src/app/app-utility.service';
 
 @Component({
   selector: 'app-page-a2',
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageA2Component implements OnInit {
 
-  constructor() { }
+  constructor(
+    private global_utilities: AppUtilityService
+  ){}
 
   ngOnInit(): void {
   }
 
   openBanner(){
-    //TODO
+    this.global_utilities.displayBanner(this.global_utilities.error_messages.service_failure);
   }
 
 }
