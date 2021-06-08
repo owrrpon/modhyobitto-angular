@@ -308,8 +308,21 @@
         }
     }
 }
-.modhyobitto-checkbox-list{
-    list-style-type: none;
+.modhyobitto-checkbox{
+    ul{
+        list-style-type: none;
+        margin-bottom: 0.5rem;
+    }
+}
+.modhyobitto-radio{
+    .mat-radio-group{
+        margin-bottom: 0.5rem;
+    }
+}
+.modhyobitto-checkbox, .modhyobitto-radio{
+    .mat-error{
+        font-size:75%;
+    }
 }
 
 // Snack bar
