@@ -22,9 +22,15 @@ export class BannerComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     let banner_control = this.global_utilities.getGlobalData('banner_control');
     this.banner_control_sub = banner_control.subscribe(
-      (text: any) => {
-        this.banner_text = text;
-        this.is_banner_open = true;
+      (options: any) => {
+        if(options.to_show){
+          this.banner_text = options.text;
+          setTimeout(()=>{
+            this.is_banner_open = true;
+          },1200);
+        }else{
+          this.is_banner_open = false;
+        }
       }
     );
   }

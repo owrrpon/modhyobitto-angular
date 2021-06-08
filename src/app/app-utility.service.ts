@@ -41,8 +41,9 @@ export class AppUtilityService extends AppDictionaryService {
       this.globals.loading_animation_control.next(true);
     }
 
-    // Hide service errors if any
-    this.hideServiceError();
+    // Hide snackbars and banners if any
+    this.hideSnackbar();
+    this.hideBanner();
 
     // For local API requests, fetch the JSON file instead
     if(!environment.production){
@@ -128,8 +129,19 @@ export class AppUtilityService extends AppDictionaryService {
     );
   }
 
-  displayBanner(text?: string){
-    this.globals.banner_control.next(text ||  this.error_messages.service_failure);
+  showBanner(text?: string){
+    let options = {
+      to_show: true,
+      text: text ||  this.error_messages.service_failure
+    };
+    this.globals.banner_control.next(options);
+  }
+
+  hideBanner(){
+    let options = {
+      to_show: false
+    };
+    this.globals.banner_control.next(options);
   }
 
   /*
@@ -178,13 +190,15 @@ export class AppUtilityService extends AppDictionaryService {
     this.router.navigateByUrl(URL);
   }
 
-  showServiceError(message?: string){
-    let snackar_ref = this.snackbar.open(message || this.error_messages.service_failure, 'OK');
-    this.setGlobalData('service_error_snackbar',snackar_ref);
+  showSnackbar(message?: string){
+    setTimeout(()=>{
+      let snackar_ref = this.snackbar.open(message || this.error_messages.service_failure, 'OK');
+      this.setGlobalData('global_snackbar',snackar_ref);
+    },1200);
   }
 
-  hideServiceError(){
-    this.getGlobalData('service_error_snackbar')?.dismiss();
+  hideSnackbar(){
+    this.getGlobalData('global_snackbar')?.dismiss();
   }
 
   /* TODO

@@ -2,5 +2,8 @@
     <div class="page-content__header">
         <h1>Banners, Dialogs and Snackbars</h1>
     </div>
-    <button (click)="openBanner()">Banner</button>
+    <div class="d-flex justify-content-around">
+        <button (click)="openCommunication('banner')">Banner</button>
+        <button (click)="openCommunication('snackbar')">Snackbar</button>
+    </div>
 </article>
