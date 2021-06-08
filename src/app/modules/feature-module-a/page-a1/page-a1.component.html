@@ -81,13 +81,27 @@
                         type="daterange">
                     </app-modhyobitto-form-field>
                 </div>
-                <div class="col-6">
+                <div class="col-12">
                     <app-modhyobitto-form-field
                         [parent_FG]="formfield_demo_form"
                         control_name="textarea"
                         label="Text Area"
                         type="textarea">
                     </app-modhyobitto-form-field>
+                </div>
+                <div class="col-6">
+                    <ul class="modhyobitto-checkbox-list">
+                        <li>
+                          <mat-checkbox formControlName="checkbox1">
+                            Checkbox 1
+                          </mat-checkbox>
+                        </li>
+                        <li>
+                            <mat-checkbox formControlName="checkbox2">
+                              Checkbox 2
+                            </mat-checkbox>
+                          </li>
+                    </ul>
                 </div>
             </div>
         </div>

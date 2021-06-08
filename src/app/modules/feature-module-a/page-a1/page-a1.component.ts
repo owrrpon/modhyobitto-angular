@@ -30,7 +30,9 @@ export class PageA1Component implements OnInit {
       date: new FormControl(),
       start_date: new FormControl(),
       end_date: new FormControl(),
-      textarea: new FormControl()
+      textarea: new FormControl(),
+      checkbox1: new FormControl(false),
+      checkbox2: new FormControl(false)
     });
   }
 

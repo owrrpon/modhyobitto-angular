@@ -6,6 +6,7 @@ import {MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 const MATERIAL_COMPONENTS = [
   MatTabsModule,
@@ -15,7 +16,8 @@ const MATERIAL_COMPONENTS = [
   MatProgressSpinnerModule,
   MatSnackBarModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatCheckboxModule
 ];
 
 
