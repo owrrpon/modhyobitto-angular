@@ -119,10 +119,10 @@
     position: fixed;
     left: 0;
     right: 0;
-    top: 55px;
+    top: 40px;
     transition: top 0.5s cubic-bezier(0, 1, 0.5, 1);
     &.scrolled{
-        top: -15px;
+        top: -30px;
     }
     .primary-banner__content{
         display: flex;
