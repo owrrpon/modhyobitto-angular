@@ -12,4 +12,8 @@ export class PageA2Component implements OnInit {
   ngOnInit(): void {
   }
 
+  openBanner(){
+    //TODO
+  }
+
 }
