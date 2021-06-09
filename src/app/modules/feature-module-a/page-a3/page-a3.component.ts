@@ -18,7 +18,7 @@ export class PageA3Component implements OnInit {
   openDialog(type: string){
     this.global_utilities.displayAlertDialog({
       data:{
-        title: "Sample Alert Dialog",
+        title: "Everything's Not Lost",
         type: type,
         message: "If you ever feel neglected, if you think all is lost, I'll be counting up my demons (yeah) hoping everything's not lost."
       }

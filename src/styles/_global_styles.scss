@@ -201,6 +201,7 @@
                 text-transform: uppercase;
             }
             .section-links{
+                font-family: 'Roboto', sans-serif;
                 list-style-type: none;
                 margin-top: 1rem;
                 padding: 0px;
@@ -287,6 +288,7 @@
     }
     .side-bar__navigation{
         .side-bar__navigation-links{
+            font-family: 'Roboto', sans-serif;
             list-style-type: none;
             padding:0;
             li{
@@ -336,6 +338,9 @@
         h1{
             margin-bottom: 0;
         }
+    }
+    .page-content__description{
+        text-align: justify;
     }
 }
 
