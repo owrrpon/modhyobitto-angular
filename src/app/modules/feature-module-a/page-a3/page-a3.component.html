@@ -1,8 +1,12 @@
 <article class="page-content page-a1">
     <div class="page-content__header">
-        <h1>Page Three</h1>
+        <h1>Dialogs</h1>
     </div>
     <p class="page-content__description">
         Now, for ten years we've been on our own and moss grows fat on a rollin' stone but that's not how it used to be. When the jester sang for the king and queen in a coat he borrowed from James Dean and a voice that came from you and me. Oh, and while the king was looking down the jester stole his thorny crown. The courtroom was adjourned. No verdict was returned. And while Lenin read a book on Marx. A quartet practiced in the park and we sang dirges in the dark. The day the music died.
     </p>
+    <div class="d-flex justify-content-around">
+        <button matRipple (click)="openDialog('alert')">Alert Dialog</button>
+        <button matRipple (click)="openDialog('confirm')">Confirm Dialog</button>
+    </div>
 </article>

@@ -7,6 +7,9 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { ModhyobittoDialogComponent } from './modules/__shared-utilities/modhyobitto-dialog/modhyobitto-dialog.component';
+import { Overlay } from '@angular/cdk/overlay';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +25,9 @@ export class AppUtilityService extends AppDictionaryService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
+    private dialog: MatDialog,
+    private overlay: Overlay
   ) { super(); }
 
   serviceWrapper(
@@ -144,19 +149,18 @@ export class AppUtilityService extends AppDictionaryService {
     this.globals.banner_control.next(options);
   }
 
-  /*
-  TODO
   displayAlertDialog(options?: any){
     let global_options = {
+      autoFocus: false,
       scrollStrategy: this.overlay.scrollStrategies.noop()
     };
     let dialog_config = {...global_options, ...options};
     let dialog_ref = this.dialog.open(
-      ModhyobittoAlertDialogComponent,
+      ModhyobittoDialogComponent,
       dialog_config
     );
     return dialog_ref;
-  }*/
+  }
 
   toggleFormControls(
     form_group: FormGroup, 

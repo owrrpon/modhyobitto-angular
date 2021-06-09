@@ -112,6 +112,16 @@
         }
     }
 }
+
+%mat-action-button{
+    background: transparent;
+    color: map-get($modhyobitto-colors, primary);
+    font-family: 'RobotoBold', sans-serif;
+    height: 35px;
+    &:hover, &:focus{
+        background: map-get($modhyobitto-colors, subtle-bg);
+    }
+}
 //banner
 .primary-banner{
     background: white;
@@ -137,13 +147,7 @@
         }
         .primary-banner__action{
             button{
-                background: transparent;
-                color: map-get($modhyobitto-colors, primary);
-                font-family: 'RobotoBold', sans-serif;
-                height: 30px;
-                &:hover, &:focus{
-                    color: map-get($modhyobitto-colors, primary-dark);
-                }
+                @extend %mat-action-button;
             }
         }
     }
@@ -160,6 +164,26 @@
     color: map-get($modhyobitto-colors, primary-light);
     button{
         font-family: 'RobotoBold', sans-serif;
+    }
+}
+
+// Dialog
+.modhyobitto-dialog{
+    max-width: 500px;
+    .mat-dialog-title{
+        border-bottom: 1px solid map-get($modhyobitto-colors, divider);
+        color: map-get($modhyobitto-colors, primary-dark);
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+    }
+    .mat-dialog-content{
+        margin-bottom: 2rem;
+    }
+    .mat-dialog-actions{
+        justify-content: flex-end;   
+        button{
+            @extend %mat-action-button;
+        }     
     }
 }
 
