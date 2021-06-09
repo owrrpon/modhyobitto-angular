@@ -131,6 +131,7 @@
     right: 0;
     top: 40px;
     transition: top 0.5s cubic-bezier(0, 1, 0.5, 1);
+    z-index: 990;
     &.scrolled{
         top: -30px;
     }
