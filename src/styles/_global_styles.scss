@@ -139,7 +139,7 @@
             button{
                 background: transparent;
                 color: map-get($modhyobitto-colors, primary);
-                font-family: 'RobotoBold', sans-serif;;
+                font-family: 'RobotoBold', sans-serif;
                 height: 30px;
                 &:hover, &:focus{
                     color: map-get($modhyobitto-colors, primary-dark);
@@ -158,9 +158,8 @@
 // Snack bar
 .mat-simple-snackbar-action{
     color: map-get($modhyobitto-colors, primary-light);
-    button:focus{
-        outline: 1px solid map-get($modhyobitto-colors, primary-light);
-        outline-offset: 0;
+    button{
+        font-family: 'RobotoBold', sans-serif;
     }
 }
 
@@ -265,6 +264,10 @@
             li{
                 padding-top: 8px;
                 padding-bottom: 8px;
+                border-top: solid 1px map-get($modhyobitto-colors, divider);
+                &:last-of-type{
+                    border-bottom: solid 1px map-get($modhyobitto-colors, divider);
+                }
             }
             .side-bar__navigation-links--active{
                 color: map-get($modhyobitto-colors, primary-dark);
