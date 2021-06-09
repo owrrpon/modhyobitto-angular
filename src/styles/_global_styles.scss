@@ -170,19 +170,23 @@
     font-size: 0.95rem;
     padding: 50px 0;
     .primary-footer__sitemap{
-        .section-header{
-            font-family: 'RobotoBold', sans-serif;
-        }
-        .section-links{
-            list-style-type: none;
-            margin-top: 30px;
-            padding: 0px;
-            li{
-                margin-bottom: 10px;
-                a{
-                    color: white;
-                    &:hover{
-                        color: map-get($modhyobitto-colors, primary-light);
+        .section-link-container{
+            padding: 0 2rem;
+            .section-header{
+                font-family: 'RobotoBold', sans-serif;
+                text-transform: uppercase;
+            }
+            .section-links{
+                list-style-type: none;
+                margin-top: 1rem;
+                padding: 0px;
+                li{
+                    margin-bottom: 10px;
+                    a{
+                        color: white;
+                        &:hover{
+                            color: map-get($modhyobitto-colors, primary-light);
+                        }
                     }
                 }
             }
@@ -191,7 +195,7 @@
     .primary-footer__legal{
         margin-top: 75px;
         .primary-footer__legal-disclaimer{
-            border-top: 1px solid map-get($modhyobitto-colors, subtle-bg);
+            border-top: 1px solid map-get($modhyobitto-colors, primary-light);
             p{
                 margin-top: 30px;
             }
