@@ -142,6 +142,7 @@
         font-size: 0.875rem;
         justify-content: center;
         min-height: 50px;
+        opacity: 0;
         .primary-banner__graphic-text-wrapper, .primary-banner__action{
             padding: 1rem;
             margin: 0 1rem;
@@ -156,6 +157,9 @@
         top: 118px;
         &.scrolled{
             top: 48px;
+        }
+        .primary-banner__content{
+            opacity: 1;
         }
     }
 }
