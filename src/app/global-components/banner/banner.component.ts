@@ -24,18 +24,19 @@ export class BannerComponent implements OnInit, OnDestroy {
     this.banner_control_sub = banner_control.subscribe(
       (options: any) => {
         if(options.to_show){
-          this.banner_text = options.text;
           setTimeout(()=>{
+            this.banner_text = options.text;
             this.is_banner_open = true;
           },1200);
         }else{
-          this.is_banner_open = false;
+          this.dismissBanner();
         }
       }
     );
   }
 
   dismissBanner(){
+    this.banner_text = '';
     this.is_banner_open = false;
   }
 
