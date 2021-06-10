@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { ModhyobittoDialogComponent } from './modules/__shared-utilities/modhyobitto-dialog/modhyobitto-dialog.component';
 import { Overlay } from '@angular/cdk/overlay';
+import { saveAs } from 'file-saver';
 
 @Injectable({
   providedIn: 'root'
@@ -116,18 +117,18 @@ export class AppUtilityService extends AppDictionaryService {
     );
   }
 
-  exportReport(data_source: string){
+  downloadFile(){
     return this.serviceWrapper(
       'POST',
-      this.getAPI('export_report'),
+      this.getAPI('file_download'),
       (response: any) => {
-        let file_name = data_source+"_report.xlsx";
-        //saveAs(response, file_name); TODO
-        return {'data': {'message': 'export success'}};
+        let file_name = "dummy_file.pdf";
+        saveAs(response, file_name);
+        return {'data': {'message': 'download success'}};
       },
       {
         body: {
-          source: data_source
+          'dummy': 'data'
         },
         responseType: "blob"
       }
