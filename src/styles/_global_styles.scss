@@ -338,8 +338,13 @@
             margin-bottom: 0.5rem;
             .page-sub-section__description{
                 margin-bottom: 0;
-                padding-left: 15px;
                 text-align: justify;
+                @include media-breakpoint-only(sm) {
+                    padding-left: 15px;
+                }
+                @include media-breakpoint-up(lg) {
+                    padding-left: 15px;
+                }
             }
             @include media-breakpoint-down(sm) {
                 flex-direction: column;
