@@ -405,6 +405,9 @@
         margin-bottom: 3rem;
         h1{
             margin-bottom: 0;
+            @include media-breakpoint-down(sm) {
+                font-size: 3.75rem;
+            }
         }
     }
     .page-content__description{
