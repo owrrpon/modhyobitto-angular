@@ -15,12 +15,25 @@ export class PageA3Component implements OnInit {
   ngOnInit(): void {
   }
 
-  openDialog(type: string){
+  openAlertDialog(){
     this.global_utilities.displayAlertDialog({
       data:{
         title: "Everything's Not Lost",
-        type: type,
         message: "If you ever feel neglected, if you think all is lost, I'll be counting up my demons (yeah) hoping everything's not lost."
+      }
+    });
+  }
+
+  openConfirmationDialog(){
+    this.global_utilities.displayAlertDialog({
+      data:{
+        title: "What Will Become Of Us?",
+        message: "For they'll pour cement down this hole of ours and we'll be stuck under stones and flowers. Will we go alone out on our own? Oh, darling that's what will become of us?",
+        dismiss_text: 'Dismiss',
+        action_text: 'Concrete',
+        action: ()=>{
+          this.global_utilities.showSnackbar('We will bite our noses off to spite our faces, both of us will rust like metal fences in the rain.');
+        }
       }
     });
   }

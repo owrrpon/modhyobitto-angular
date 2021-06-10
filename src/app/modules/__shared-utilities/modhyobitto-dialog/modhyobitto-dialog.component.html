@@ -4,6 +4,10 @@
         {{data.message}}
     </mat-dialog-content>
     <mat-dialog-actions>
-        <button matRipple [mat-dialog-close]>OK</button>
+        <!-- Compulsory Dismiss Button -->
+        <button matRipple [mat-dialog-close]>{{data.dismiss_text || 'OK'}}</button>
+        <!-- Optional Action -->
+        <button *ngIf="!!data.action"
+            matRipple [mat-dialog-close] (click)="data.action()">{{data.action_text}}</button>
     </mat-dialog-actions>
 </div>

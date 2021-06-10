@@ -165,14 +165,22 @@
 }
 
 // Snack bar
-.mat-simple-snackbar-action{
-    color: map-get($modhyobitto-colors, primary-light);
-    button{
-        font-family: 'RobotoBold', sans-serif;
+.modhyobitto-snackbar.mat-snack-bar-container{
+    border-radius: 0;
+    .mat-simple-snackbar-action{
+        color: map-get($modhyobitto-colors, primary-light);
+        button{
+            font-family: 'RobotoBold', sans-serif;
+        }
     }
 }
 
 // Dialog
+.modhyobitto-dialog-container{
+    .mat-dialog-container{
+        border-radius: 0;
+    }
+}
 .modhyobitto-dialog{
     max-width: 500px;
     .mat-dialog-title{

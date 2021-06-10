@@ -149,9 +149,24 @@ export class AppUtilityService extends AppDictionaryService {
     this.globals.banner_control.next(options);
   }
 
+  showSnackbar(message?: string){
+    setTimeout(()=>{
+      let snackar_ref = this.snackbar.open(
+        message || this.error_messages.service_failure,
+        'OK',
+        {panelClass: 'modhyobitto-snackbar'});
+      this.setGlobalData('global_snackbar',snackar_ref);
+    },1200);
+  }
+
+  hideSnackbar(){
+    this.getGlobalData('global_snackbar')?.dismiss();
+  }
+
   displayAlertDialog(options?: any){
     let global_options = {
       autoFocus: false,
+      panelClass: 'modhyobitto-dialog-container',
       scrollStrategy: this.overlay.scrollStrategies.noop()
     };
     let dialog_config = {...global_options, ...options};
@@ -192,17 +207,6 @@ export class AppUtilityService extends AppDictionaryService {
 
   navigateToURL(URL: string){
     this.router.navigateByUrl(URL);
-  }
-
-  showSnackbar(message?: string){
-    setTimeout(()=>{
-      let snackar_ref = this.snackbar.open(message || this.error_messages.service_failure, 'OK');
-      this.setGlobalData('global_snackbar',snackar_ref);
-    },1200);
-  }
-
-  hideSnackbar(){
-    this.getGlobalData('global_snackbar')?.dismiss();
   }
 
   /* TODO
