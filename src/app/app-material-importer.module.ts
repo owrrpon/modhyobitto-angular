@@ -9,6 +9,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 const MATERIAL_COMPONENTS = [
   MatTabsModule,
@@ -21,7 +23,8 @@ const MATERIAL_COMPONENTS = [
   MatNativeDateModule,
   MatCheckboxModule,
   MatRadioModule,
-  MatDialogModule
+  MatDialogModule,
+  MatMenuModule
 ];
 
 

@@ -203,7 +203,7 @@ export class AppUtilityService extends AppDictionaryService {
   }
 
   onRouteActivation(){
-    this.scrollToElement('.page-content',100);
+    this.scrollToElement('.page-content',120);
   }
 
   navigateToURL(URL: string){

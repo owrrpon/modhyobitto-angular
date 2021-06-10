@@ -12,7 +12,7 @@
                 #form_ref>
         <div class="form-fields-demo__fields">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12 col-sm-6">
                     <app-modhyobitto-form-field
                         [parent_FG]="formfield_demo_form"
                         control_name="text"
@@ -21,7 +21,7 @@
                         maxlength="7">
                     </app-modhyobitto-form-field>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-6">
                     <app-modhyobitto-form-field
                         [parent_FG]="formfield_demo_form"
                         control_name="required_text"
@@ -30,7 +30,7 @@
                         maxlength="7">
                     </app-modhyobitto-form-field>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-6">
                     <app-modhyobitto-form-field
                         [parent_FG]="formfield_demo_form"
                         control_name="custom_required_text"
@@ -40,7 +40,7 @@
                         maxlength="7">
                     </app-modhyobitto-form-field>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-6">
                     <app-modhyobitto-form-field
                         [parent_FG]="formfield_demo_form"
                         control_name="generic_validation"
@@ -49,7 +49,7 @@
                         maxlength="7">
                     </app-modhyobitto-form-field>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-6">
                     <app-modhyobitto-form-field
                         [parent_FG]="formfield_demo_form"
                         control_name="custom_validation"
@@ -58,7 +58,7 @@
                         maxlength="7">
                     </app-modhyobitto-form-field>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-6">
                     <app-modhyobitto-form-field
                         [parent_FG]="formfield_demo_form"
                         control_name="select"
@@ -67,7 +67,7 @@
                         [select_option_map]="select_option_list">
                     </app-modhyobitto-form-field>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-6">
                     <app-modhyobitto-form-field
                         [parent_FG]="formfield_demo_form"
                         control_name="date"
@@ -75,7 +75,7 @@
                         type="date">
                     </app-modhyobitto-form-field>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-6">
                     <app-modhyobitto-form-field
                         [parent_FG]="formfield_demo_form"
                         control_name="start_date"
@@ -92,7 +92,7 @@
                         type="textarea">
                     </app-modhyobitto-form-field>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-6 mt-4">
                     <section class="modhyobitto-checkbox">
                         <h5>Select the options that apply 
                             <!-- <span aria-hidden="true" class="placeholder-required"> *</span> -->
@@ -114,7 +114,7 @@
                         </mat-error> -->
                     </section>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-6 mt-4">
                     <section class="modhyobitto-radio">
                         <h5>Select the option that apply 
                             <!-- <span aria-hidden="true" class="placeholder-required"> *</span> -->
@@ -132,13 +132,13 @@
                 </div>
             </div>
         </div>
-        <footer class="form-fields-demo__footer">
+        <footer class="row g-0 justify-content-around form-fields-demo__footer">
             <button matRipple
-                class="secondary-button"
+                class="secondary-button col-12 col-sm-5"
                 type="button"
                 (click)="resetDemoForm()">Reset</button>
             <button matRipple
-                class="primary-button"
+                class="primary-button col-12 col-sm-5"
                 type="submit"
                 [disabled]="!formfield_demo_form.valid">Submit</button>
         </footer>

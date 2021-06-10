@@ -55,6 +55,9 @@
 
 .secure-container__content{
     padding: 220px 0 100px 0;
+    @include media-breakpoint-down(md) {
+        padding-top: 150px;
+    }
 }
 
 .primary-header-container{
@@ -95,7 +98,7 @@
             border-bottom: none;
         }
         .mat-tab-links{
-            @include media-breakpoint-down(sm) {
+            @include media-breakpoint-down(md) {
                 justify-content: center;
             }
         }
@@ -303,6 +306,9 @@
         color: map-get($modhyobitto-colors, primary-dark);
         font-size: 2rem;
         margin-bottom: 1rem;
+        @include media-breakpoint-down(md) {
+            display: flex;
+        }
     }
     .side-bar__navigation{
         .side-bar__navigation-links{
@@ -325,6 +331,32 @@
                     text-decoration: none;
                 }
             }
+        }
+    }
+    .side-bar__menu{
+        @extend %mat-action-button;
+        color: map-get($modhyobitto-colors, primary);
+        span{
+            font-size: 2rem;
+        }
+        &:hover, &:focus{
+            background: transparent;
+            color: map-get($modhyobitto-colors, primary-dark);
+        }
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+}
+.side-bar__menu-items{
+    button{
+        color: map-get($modhyobitto-colors, primary);
+        font-family: 'Roboto', sans-serif;
+        text-transform: none;
+        &.side-bar__menu-item--active{
+            background: map-get($modhyobitto-colors, subtle-bg);
+            color: map-get($modhyobitto-colors, primary-dark);
+            font-family: 'RobotoBold', sans-serif;
         }
     }
 }
