@@ -364,6 +364,11 @@
 .page-content{
     min-height: 400px;
     //dashboard
+    &.dashboard{
+        @include media-breakpoint-down(md) {
+            padding-top: 50px;
+        }
+    }
     .page-sub-section{
         margin-bottom:  1.5rem;
         .page-sub-section__header{
