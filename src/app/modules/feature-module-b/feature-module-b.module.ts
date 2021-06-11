@@ -7,6 +7,7 @@ import { PageB5Component } from './page-b5/page-b5.component';
 import { PageB6Component } from './page-b6/page-b6.component';
 import { PageB7Component } from './page-b7/page-b7.component';
 import { PageB8Component } from './page-b8/page-b8.component';
+import { AppMaterialImporterModule } from 'src/app/app-material-importer.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PageB8Component } from './page-b8/page-b8.component';
   ],
   imports: [
     CommonModule,
-    FeatureModuleBRoutingModule
+    FeatureModuleBRoutingModule,
+    AppMaterialImporterModule    
   ]
 })
 export class FeatureModuleBModule { }

@@ -1,30 +1,53 @@
 <div class="row">
-    <div class="col-3">
+    <div class="col-12 col-md-3">
         <section role="side-bar" class="side-bar">
-            <h1 class="side-bar__heading">Module B</h1>
+            <h1 class="side-bar__heading">
+                <span class="side_bar__heading-title">Module B</span>
+                <button mat-button class="side-bar__menu"                     
+                    [matMenuTriggerFor]="menu" 
+                    aria-labelledby="sectional-navigation">
+                    <span aria-hidden="true" class="material-icons">menu</span>
+                </button>
+                <mat-menu #menu="matMenu" class="side-bar__menu-items">
+                    <button mat-menu-item
+                        routerLinkActive="side-bar__menu-item--active" 
+                        routerLink="page-b5">Page 5</button>
+                    <button mat-menu-item
+                        routerLinkActive="side-bar__menu-item--active" 
+                        routerLink="page-b6">Page 6</button>
+                    <button mat-menu-item
+                        routerLinkActive="side-bar__menu-item--active" 
+                        routerLink="page-b7">Page 7</button>
+                    <button mat-menu-item 
+                        routerLinkActive="side-bar__menu-item--active"
+                        routerLink="page-b8">Page 8</button>                
+                </mat-menu>
+            </h1>
             <nav aria-labelledby="sectional-navigation" class="side-bar__navigation">
-                <ul class="side-bar__navigation-links">
-                    <li>
-                        <a routerLinkActive="side-bar__navigation-links--active"
-                            routerLink="page-b5">Page 5</a>
-                    </li>
-                    <li>
-                        <a routerLinkActive="side-bar__navigation-links--active"
-                            routerLink="page-b6">Page 6</a>
-                    </li>
-                    <li>
-                        <a routerLinkActive="side-bar__navigation-links--active"
-                            routerLink="page-b7">Page 7</a>
-                    </li>
-                    <li>
-                        <a routerLinkActive="side-bar__navigation-links--active"
-                            routerLink="page-b8">Page 8</a>
-                    </li>
+                <ul class="side-bar__navigation-links d-none d-md-block">
+                    <ul class="side-bar__navigation-links">
+                        <li>
+                            <a routerLinkActive="side-bar__navigation-links--active"
+                                routerLink="page-b5">Page 5</a>
+                        </li>
+                        <li>
+                            <a routerLinkActive="side-bar__navigation-links--active"
+                                routerLink="page-b6">Page 6</a>
+                        </li>
+                        <li>
+                            <a routerLinkActive="side-bar__navigation-links--active"
+                                routerLink="page-b7">Page 7</a>
+                        </li>
+                        <li>
+                            <a routerLinkActive="side-bar__navigation-links--active"
+                                routerLink="page-b8">Page 8</a>
+                        </li>
+                    </ul>
                 </ul>
             </nav>
         </section>
     </div>
-    <div class="col-9">
+    <div class="col-12 col-md-9">
         <main role="main">
             <router-outlet (activate)="global_utilities.onRouteActivation()"></router-outlet>
         </main>

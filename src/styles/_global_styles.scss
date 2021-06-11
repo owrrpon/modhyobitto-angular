@@ -349,6 +349,9 @@
     }
 }
 .side-bar__menu-items{
+    &.mat-menu-panel{
+        border-radius: 0;
+    }
     button{
         color: map-get($modhyobitto-colors, primary);
         font-family: 'Roboto', sans-serif;
