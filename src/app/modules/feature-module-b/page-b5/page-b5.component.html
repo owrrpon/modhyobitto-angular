@@ -1,11 +1,148 @@
 <article class="page-content page-b5">
     <div class="page-content__header">
-        <h1>Page Five</h1>
+        <h1>File Uploader</h1>
     </div>
     <p class="page-content__description">
         Oh, and there we were all in one place, a generation lost in space with no time left to start again. So, come on, Jack be nimble, Jack be quick. Jack Flash sat on a candlestick 'cause fire is the Devil's only friend. Oh, and as I watched him on the stage my hands were clenched in fists of rage. No angel born in Hell could break that Satan spell. And as the flames climbed high into the night to light the sacrificial rite, I saw Satan laughing with delight. The day the music died.
     </p>
     <div class="row g-0 justify-content-around mt-5">
-        
+        <div class="modhyobitto-file-uploader">
+            <div class="file-uploader__instructions">
+                Drag and drop the file(s) on the gray here or click on "Browse Files".
+            </div>
+            <div class="files-for-upload">
+                <mat-expansion-panel class="selected-file" hideToggle disabled>
+                    <mat-expansion-panel-header>
+                        <div class="selected-file__header">
+                            <div class="selected-file__name">
+                                Dummy_file_name.pdf
+                            </div>
+                            <div class="selected-file__actions">
+                                <button 
+                                    matRipple
+                                    class="selected_file__upload primary-button"
+                                    matTooltip="Upload"
+                                    matTooltipPosition="left"
+                                    aria-label="Upload File">
+                                    <span aria-hidden="true" class="material-icons">file_upload</span>
+                                </button>
+                                <button 
+                                    matRipple
+                                    class="selected_file__cancel secondary-button"
+                                    matTooltip="Cancel"
+                                    matTooltipPosition="left"
+                                    aria-label="Cancel File">
+                                    <span aria-hidden="true" class="material-icons">clear</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+                    </mat-expansion-panel-header>
+                    <div class="selected-file__upload-result">
+                        The file was uploaded successfully.
+                    </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel class="selected-file" hideToggle disabled>
+                    <mat-expansion-panel-header>
+                        <div class="selected-file__header">
+                            <div class="selected-file__name">
+                                Dummy_file_name.pdf
+                            </div>
+                            <div class="selected-file__actions">
+                                <button 
+                                    matRipple
+                                    class="selected_file__upload primary-button"
+                                    matTooltip="Upload"
+                                    matTooltipPosition="left"
+                                    aria-label="Upload File" disabled>
+                                    <span aria-hidden="true" class="material-icons">file_upload</span>
+                                </button>
+                                <button 
+                                    matRipple
+                                    class="selected_file__cancel secondary-button"
+                                    matTooltip="Cancel"
+                                    matTooltipPosition="left"
+                                    aria-label="Cancel File">
+                                    <span aria-hidden="true" class="material-icons">clear</span>
+                                </button>
+                            </div>
+                        </div>
+                        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                    </mat-expansion-panel-header>
+                    <div class="selected-file__upload-result">
+                        The file was uploaded successfully.
+                    </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel class="selected-file" hideToggle disabled expanded>
+                    <mat-expansion-panel-header>
+                        <div class="selected-file__header">
+                            <div class="selected-file__name">
+                                Dummy_file_name.pdf
+                            </div>
+                            <div class="selected-file__actions">
+                                <button 
+                                    matRipple
+                                    class="selected_file__upload primary-button"
+                                    matTooltip="Upload"
+                                    matTooltipPosition="left"
+                                    aria-label="Upload File" disabled>
+                                    <span aria-hidden="true" class="material-icons">check</span>
+                                </button>
+                                <button 
+                                    matRipple
+                                    class="selected_file__cancel secondary-button"
+                                    matTooltip="Cancel"
+                                    matTooltipPosition="left"
+                                    aria-label="Cancel File">
+                                    <span aria-hidden="true" class="material-icons">clear</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+                    </mat-expansion-panel-header>
+                    <div class="selected-file__upload-result">
+                        The file was uploaded successfully.
+                    </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel class="selected-file" hideToggle disabled expanded>
+                    <mat-expansion-panel-header>
+                        <div class="selected-file__header">
+                            <div class="selected-file__name">
+                                Dummy_file_name.pdf
+                            </div>
+                            <div class="selected-file__actions">
+                                <button 
+                                    matRipple
+                                    class="selected_file__upload primary-button"
+                                    matTooltip="Upload"
+                                    matTooltipPosition="left"
+                                    aria-label="Upload File">
+                                    <span aria-hidden="true" class="material-icons">file_upload</span>
+                                </button>
+                                <button 
+                                    matRipple
+                                    class="selected_file__cancel secondary-button"
+                                    matTooltip="Cancel"
+                                    matTooltipPosition="left"
+                                    aria-label="Cancel File">
+                                    <span aria-hidden="true" class="material-icons">clear</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+                    </mat-expansion-panel-header>
+                    <div class="selected-file__upload--error">
+                        Our apologies, this site is experiencing some technical difficulties. Please refresh the page or try again.
+                    </div>
+                </mat-expansion-panel>
+            </div>
+            <div class="file-upload__browser">
+                <button 
+                matRipple
+                class="selected_file__upload primary-button">
+                    Browse Files
+                </button>
+            </div>
+        </div>
     </div>
 </article>
