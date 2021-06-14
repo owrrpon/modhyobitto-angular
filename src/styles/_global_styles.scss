@@ -577,7 +577,7 @@
             &.all_file__upload, &.all_file__cancel{
                 display: flex;
                 align-items: center;
-                border-left: 2px solid white;
+                border-left: 2px solid map-get($modhyobitto-colors, subtle-bg);
                 min-width: 0;
                 padding: 0 15px;
             }
