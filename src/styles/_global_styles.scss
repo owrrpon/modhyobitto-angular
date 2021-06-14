@@ -438,14 +438,6 @@
                     padding-right: 0.5em;
                 }
             }
-            // &.mat-form-field-disabled{
-            //     .mat-form-field-flex{
-            //         background-color: map-get($modhyobitto-colors, subtle-bg);
-            //     }
-            //     .mat-input-element:disabled, mat-form-field-label{
-            //         color: inherit;
-            //     }
-            // }
             .mat-form-field-wrapper{
                 margin-bottom: 12px;
             }
@@ -572,8 +564,17 @@
             margin-bottom: 1rem;
         }
     }
-    .file-upload__browser{
+    .file-upload__options{
         display: flex;
         justify-content: center;
+        button{
+            &.all_file__upload, &.all_file__cancel{
+                display: flex;
+                align-items: center;
+                border-left: 2px solid white;
+                min-width: 0;
+                padding: 0 15px;
+            }
+        }
     }
 }

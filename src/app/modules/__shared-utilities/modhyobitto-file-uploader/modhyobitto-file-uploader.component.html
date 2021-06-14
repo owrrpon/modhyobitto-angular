@@ -128,11 +128,27 @@
             </div>
         </mat-expansion-panel>
     </div>
-    <div class="file-upload__browser">
+    <div class="file-upload__options">
         <button 
         matRipple
-        class="selected_file__upload primary-button">
+        class="file-upload__browse primary-button">
             Browse Files
+        </button>
+        <button 
+            matRipple
+            class="all_file__upload primary-button"
+            matTooltip="Upload All"
+            matTooltipPosition="above"
+            aria-label="Upload All Files">
+            <span aria-hidden="true" class="material-icons">file_upload</span>
+        </button>
+        <button 
+            matRipple
+            class="all_file__cancel secondary-button"
+            matTooltip="Cancel All"
+            matTooltipPosition="above"
+            aria-label="Cancel All Files">
+            <span aria-hidden="true" class="material-icons">clear</span>
         </button>
     </div>
 </div>
