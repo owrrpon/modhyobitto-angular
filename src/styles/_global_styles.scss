@@ -491,6 +491,12 @@
     }
 }
 
+.mat-select-panel-wrap{
+    .mat-select-panel{
+        border-radius: 0;
+    }
+}
+
 .modhyobitto-file-uploader{
     background-color: map-get($modhyobitto-colors, subtle-bg);
     border: 2px dashed map-get($modhyobitto-colors, primary);
