@@ -204,6 +204,12 @@
     }
 }
 
+// Tooltip
+.mat-tooltip-panel{
+    .mat-tooltip{
+        border-radius: 0;
+    }
+}
 
 .primary-footer{
     background-color: map-get($modhyobitto-colors, primary-dark);
