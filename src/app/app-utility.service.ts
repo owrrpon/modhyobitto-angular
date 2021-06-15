@@ -135,10 +135,10 @@ export class AppUtilityService extends AppDictionaryService {
     );
   }
 
-  uploadFile(form_data: any){
+  uploadFile(form_data: any, API: string){
     return this.serviceWrapper(
       'POST',
-      this.getAPI('file_upload'),
+      API,
       (response: any)=>{
         return {'data': { 'message': response.uploadStatus}};
       },

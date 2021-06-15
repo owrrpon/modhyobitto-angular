@@ -11,6 +11,7 @@ import { AppUtilityService } from 'src/app/app-utility.service';
 export class ModhyobittoFileUploaderComponent implements OnInit, OnDestroy {
 
   @Input() config!: {
+    API: string,
     MIME_types_accepted: string,
     is_multiple_selection_allowed: boolean,
     data: any
@@ -93,7 +94,7 @@ export class ModhyobittoFileUploaderComponent implements OnInit, OnDestroy {
     file_for_upload.is_upload_in_progress = true;
     file_for_upload.upload_result = null;
 
-    this.file_upload_sub = this.global_utilities.uploadFile(form_data).subscribe(
+    this.file_upload_sub = this.global_utilities.uploadFile(form_data, this.config.API).subscribe(
       (success)=>{
         // Dummy setTimeout to imitate API latency 
         setTimeout(()=>{
