@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageB5Component implements OnInit {
 
+  file_upload_config = {
+    MIME_types_accepted: "application/pdf",
+    is_multiple_selection_allowed: true,
+    data: null
+  };
+
   constructor() { }
 
   ngOnInit(): void {

@@ -3,11 +3,14 @@
         Drag and drop the file(s) here or click on "Browse Files".
     </div>
     <div class="files-for-upload">
-        <mat-expansion-panel class="selected-file" hideToggle disabled>
+        <mat-expansion-panel 
+            *ngFor="let selected_file of selected_files; index as i"
+            class="selected-file" hideToggle disabled
+            expanded="{{!!selected_file.upload_result}}">
             <mat-expansion-panel-header>
                 <div class="selected-file__header">
                     <div class="selected-file__name">
-                        Dummy_file_name.pdf
+                        {{selected_file.file.name}}
                     </div>
                     <div class="selected-file__actions">
                         <button 
@@ -15,137 +18,72 @@
                             class="selected_file__upload primary-button"
                             matTooltip="Upload"
                             matTooltipPosition="left"
-                            aria-label="Upload File">
-                            <span aria-hidden="true" class="material-icons">file_upload</span>
+                            aria-label="Upload File"
+                            (click)="uploadFile(i)"
+                            [disabled]="selected_file.is_upload_in_progress || selected_file.upload_result=='success'">
+                            <span *ngIf="selected_file.upload_result!='success'"
+                                aria-hidden="true" class="material-icons">file_upload</span>
+                            <span *ngIf="selected_file.upload_result=='success'"
+                                aria-hidden="true" class="material-icons">check</span>
                         </button>
                         <button 
                             matRipple
                             class="selected_file__cancel secondary-button"
                             matTooltip="Cancel"
                             matTooltipPosition="left"
-                            aria-label="Cancel File">
+                            aria-label="Cancel File"
+                            (click)="inititateFileCancel(i)">
                             <span aria-hidden="true" class="material-icons">clear</span>
                         </button>
                     </div>
                 </div>
+                <mat-progress-bar *ngIf="selected_file.is_upload_in_progress" mode="indeterminate"></mat-progress-bar>
             </mat-expansion-panel-header>
-            <div class="selected-file__upload-result">
+            <div *ngIf="selected_file.upload_result=='success'"
+                class="selected-file__upload-result">
                 The file was uploaded successfully.
+            </div>
+            <div *ngIf="!!selected_file.upload_result && selected_file.upload_result!='success'"
+                class="selected-file__upload--error">
+                {{selected_file.upload_result}}
             </div>
         </mat-expansion-panel>
-        <!-- <mat-expansion-panel class="selected-file" hideToggle disabled>
-            <mat-expansion-panel-header>
-                <div class="selected-file__header">
-                    <div class="selected-file__name">
-                        Dummy_file_name.pdf
-                    </div>
-                    <div class="selected-file__actions">
-                        <button 
-                            matRipple
-                            class="selected_file__upload primary-button"
-                            matTooltip="Upload"
-                            matTooltipPosition="left"
-                            aria-label="Upload File" disabled>
-                            <span aria-hidden="true" class="material-icons">file_upload</span>
-                        </button>
-                        <button 
-                            matRipple
-                            class="selected_file__cancel secondary-button"
-                            matTooltip="Cancel"
-                            matTooltipPosition="left"
-                            aria-label="Cancel File">
-                            <span aria-hidden="true" class="material-icons">clear</span>
-                        </button>
-                    </div>
-                </div>
-                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-            </mat-expansion-panel-header>
-            <div class="selected-file__upload-result">
-                The file was uploaded successfully.
-            </div>
-        </mat-expansion-panel> -->
-        <!-- <mat-expansion-panel class="selected-file" hideToggle disabled expanded>
-            <mat-expansion-panel-header>
-                <div class="selected-file__header">
-                    <div class="selected-file__name">
-                        Dummy_file_name.pdf
-                    </div>
-                    <div class="selected-file__actions">
-                        <button 
-                            matRipple
-                            class="selected_file__upload primary-button"
-                            matTooltip="Upload"
-                            matTooltipPosition="left"
-                            aria-label="Upload File" disabled>
-                            <span aria-hidden="true" class="material-icons">check</span>
-                        </button>
-                        <button 
-                            matRipple
-                            class="selected_file__cancel secondary-button"
-                            matTooltip="Cancel"
-                            matTooltipPosition="left"
-                            aria-label="Cancel File">
-                            <span aria-hidden="true" class="material-icons">clear</span>
-                        </button>
-                    </div>
-                </div>
-            </mat-expansion-panel-header>
-            <div class="selected-file__upload-result">
-                The file was uploaded successfully.
-            </div>
-        </mat-expansion-panel> -->
-        <!-- <mat-expansion-panel class="selected-file" hideToggle disabled expanded>
-            <mat-expansion-panel-header>
-                <div class="selected-file__header">
-                    <div class="selected-file__name">
-                        Dummy_file_name.pdf
-                    </div>
-                    <div class="selected-file__actions">
-                        <button 
-                            matRipple
-                            class="selected_file__upload primary-button"
-                            matTooltip="Upload"
-                            matTooltipPosition="left"
-                            aria-label="Upload File">
-                            <span aria-hidden="true" class="material-icons">file_upload</span>
-                        </button>
-                        <button 
-                            matRipple
-                            class="selected_file__cancel secondary-button"
-                            matTooltip="Cancel"
-                            matTooltipPosition="left"
-                            aria-label="Cancel File">
-                            <span aria-hidden="true" class="material-icons">clear</span>
-                        </button>
-                    </div>
-                </div>
-            </mat-expansion-panel-header>
-            <div class="selected-file__upload--error">
-                Our apologies, this site is experiencing some technical difficulties. Please refresh the page or try again.
-            </div>
-        </mat-expansion-panel> -->
     </div>
     <div class="file-upload__options">
+        <form 
+            class="file-upload__native-selection"
+            [formGroup]="file_selection_form">
+            <input type="file" #fileSelector
+                formControlName="file_selection"
+                [accept]="config.MIME_types_accepted"
+                multiple="{{config.is_multiple_selection_allowed}}">
+        </form>
         <button 
         matRipple
-        class="file-upload__browse primary-button">
+        class="file-upload__browse primary-button"
+        (click)="openFileSelector()">
             Browse Files
         </button>
-        <!-- <button 
-            matRipple
-            class="all_file__upload primary-button"
-            matTooltip="Upload All"
-            matTooltipPosition="above"
-            aria-label="Upload All Files">
-            <span aria-hidden="true" class="material-icons">file_upload</span>
-        </button>
-        <button 
-            matRipple
-            class="all_file__cancel secondary-button"
-            matTooltip="Cancel All"
-            matTooltipPosition="above"
-            aria-label="Cancel All Files">
-            <span aria-hidden="true" class="material-icons">clear</span>
-        </button> -->
+        <ng-container *ngIf="selected_files.length>1">
+            <button 
+                matRipple
+                class="all_file__upload primary-button"
+                matTooltip="Upload All"
+                matTooltipPosition="above"
+                aria-label="Upload All Files"
+                (click)="uploadAll()"
+                [disabled]="!isAnyFileNotUploaded()">
+                <span aria-hidden="true" class="material-icons">file_upload</span>
+            </button>
+            <button 
+                matRipple
+                class="all_file__cancel secondary-button"
+                matTooltip="Cancel All"
+                matTooltipPosition="above"
+                aria-label="Cancel All Files"
+                (click)="initiateCancelAll()">
+                <span aria-hidden="true" class="material-icons">clear</span>
+            </button>
+        </ng-container>
     </div>
 </div>

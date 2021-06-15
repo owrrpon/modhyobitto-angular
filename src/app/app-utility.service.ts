@@ -36,7 +36,7 @@ export class AppUtilityService extends AppDictionaryService {
     API_URL: string,
     responseProcessing: any,
     request_data?: any,
-    skip_loading_animation?: boolean
+    skip_loading_animation?: string
   ): Subject<any> {
 
     let response_subject = new Subject<any>();
@@ -132,6 +132,20 @@ export class AppUtilityService extends AppDictionaryService {
         },
         responseType: "blob"
       }
+    );
+  }
+
+  uploadFile(form_data: any){
+    return this.serviceWrapper(
+      'POST',
+      this.getAPI('file_upload'),
+      (response: any)=>{
+        return {'data': { 'message': response.uploadStatus}};
+      },
+      {
+        body: form_data
+      }, 
+      'skip_loader_animation'     
     );
   }
 

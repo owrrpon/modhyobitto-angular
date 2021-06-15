@@ -22,7 +22,8 @@ export class AppDictionaryService {
 
   service_URLs: { [key:string]: string } = {
     'login': 'loginservice',
-    'file_download': 'file_download'
+    'file_download': 'file_download',
+    'file_upload': 'file_upload'
   };
 
   // Mapping website host with API host
