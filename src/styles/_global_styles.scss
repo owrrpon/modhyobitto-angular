@@ -593,3 +593,39 @@
         }
     }
 }
+
+.modhyobitto-table{
+    width: 100%;
+    .mat-header-row{
+        background-color: map-get($modhyobitto-colors, primary);
+        .mat-header-cell{
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }        
+    }
+    .mat-cell{
+        color: map-get($modhyobitto-colors, default-text);
+    }
+    .numeric-col{
+        &.mat-cell, &.mat-header-cell{
+            text-align: right;
+            padding-right: 1.5rem;
+        }
+        &.mat-cell{
+            font-family: 'RobotoMono', sans-serif;
+        }
+    }
+}
+.mat-paginator-container{
+    font-family: 'Roboto', sans-serif;
+    .mat-paginator-page-size-label, .mat-select-trigger, .mat-paginator-range-label{
+        color: map-get($modhyobitto-colors, default-text);
+        font-size: 14px;
+    }
+    .mat-paginator-range-actions{
+        button{
+            color: map-get($modhyobitto-colors, primary);
+        }
+    }
+}

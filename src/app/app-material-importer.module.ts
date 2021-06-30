@@ -13,6 +13,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 const MATERIAL_COMPONENTS = [
@@ -30,7 +32,9 @@ const MATERIAL_COMPONENTS = [
   MatMenuModule,
   MatExpansionModule,
   MatProgressBarModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatTableModule,
+  MatPaginatorModule
 ];
 
 
