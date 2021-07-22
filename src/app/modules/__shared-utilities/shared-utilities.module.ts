@@ -6,12 +6,14 @@ import { ModhyobittoFormFieldComponent } from './modhyobitto-form-field/modhyobi
 import { ModhyobittoDialogComponent } from './modhyobitto-dialog/modhyobitto-dialog.component';
 import { ModhyobittoFileUploaderComponent } from './modhyobitto-file-uploader/modhyobitto-file-uploader.component';
 import { DragAndDropDirective } from './drag-and-drop-directive/drag-and-drop.directive';
+import { ModhyobittoTableComponent } from './modhyobitto-table/modhyobitto-table.component';
 
 const UTILITY_COMPONENTS = [
   ModhyobittoFormFieldComponent,
   ModhyobittoDialogComponent,
   ModhyobittoFileUploaderComponent,
-  DragAndDropDirective
+  DragAndDropDirective,
+  ModhyobittoTableComponent
 ];
 
 
