@@ -593,25 +593,57 @@
 }
 
 .modhyobitto-table{
-    width: 100%;
-    .mat-header-row{
-        background-color: map-get($modhyobitto-colors, primary);
-        .mat-header-cell{
-            color: white;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-        }        
-    }
-    .mat-cell{
-        color: map-get($modhyobitto-colors, default-text);
-    }
-    .numeric-col{
-        &.mat-cell, &.mat-header-cell{
-            text-align: right;
-            padding-right: 1.5rem;
+    border: solid 1px map-get($modhyobitto-colors, primary);
+    .modhyobitto-table__grid{
+        width: 100%;
+        .mat-header-row{
+            background-color: map-get($modhyobitto-colors, primary);
+            .mat-header-cell{
+                color: white;
+                font-family: 'Roboto', sans-serif;
+                font-size: 1rem;
+            }        
         }
-        &.mat-cell{
-            font-family: 'RobotoMono', sans-serif;
+        .mat-cell{
+            color: map-get($modhyobitto-colors, default-text);
+            &.row-action-column{
+                padding: 0 8px 0 1.5rem;
+                width: 72px;
+            }
+        }
+        .numeric-col{
+            &.mat-cell, &.mat-header-cell{
+                text-align: right;
+                padding-right: 1.5rem;
+            }
+            &.mat-cell{
+                font-family: 'RobotoMono', sans-serif;
+            }
+        }
+    }
+    .modhyobitto-table__add{
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 8px 0;
+    }
+    .modhyobitto-table__action-button{
+        background: white;
+        border-radius: 50%;
+        color: map-get($modhyobitto-colors, primary);
+        height: 40px;
+        padding: 0;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:focus{
+            background: map-get($modhyobitto-colors, disabled-bg);
+        }
+        &:hover{
+            background: transparent;
+        }
+        &:focus, &:hover{
+            color: map-get($modhyobitto-colors, primary);
         }
     }
 }

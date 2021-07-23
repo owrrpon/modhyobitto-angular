@@ -45,6 +45,9 @@ export class ModhyobittoTableComponent implements OnInit, AfterViewInit, OnDestr
       let col_config = column_config[i];
       columns_to_display.push(col_config.key);
     }
+    if(!!this.table_config?.ediTable?.edit){
+      columns_to_display.push('edit');
+    }
     this.displayed_columns = columns_to_display;
   }
 
@@ -55,6 +58,14 @@ export class ModhyobittoTableComponent implements OnInit, AfterViewInit, OnDestr
         this.table_data_source.paginator = this.paginator; 
       }
     );
+  }
+
+  editRow(row: any){
+    
+  }
+
+  addRow(){
+    
   }
   
   ngAfterViewInit(): void {
@@ -69,9 +80,7 @@ export class ModhyobittoTableComponent implements OnInit, AfterViewInit, OnDestr
     ]);
   }
 
-  // editRow(row: ModhyobittoData){
-    
-  // }
+  
 
   // ifHighlightedRow(row: any){
   //   let if_highlighted = false;
