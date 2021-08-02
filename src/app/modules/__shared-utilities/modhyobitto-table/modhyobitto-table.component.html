@@ -1,51 +1,48 @@
 <div class="modhyobitto-table">
-            <table mat-table [dataSource]="table_data_source" class="modhyobitto-table__grid">
-                <ng-container 
-                    *ngFor="let column of table_config.columns; index as i"
-                    [matColumnDef]="column.key">
-                    <th mat-header-cell *matHeaderCellDef [ngClass]="{'numeric-col': !!column.numeric}">{{column.heading}}</th>
-                    <td mat-cell *matCellDef="let table_row" [ngClass]="{'numeric-col': !!column.numeric}"> {{table_row[column.key]}} </td>
-                </ng-container>
-              
-                <!-- Edit Column -->
-                <ng-container 
-                    *ngIf="!!table_config?.ediTable?.edit"
-                    matColumnDef="edit">
-                  <th mat-header-cell *matHeaderCellDef></th>
-                  <td mat-cell *matCellDef="let table_row" class="row-action-column">
-                    <button 
-                        matRipple
-                        class="modhyobitto-table__action-button"
-                        matTooltip="Edit Row"
-                        matTooltipPosition="left"
-                        aria-label="Edit Row"
-                        (click)="editRow(table_row)">
-                        <span aria-hidden="true" class="material-icons-outlined">edit</span>
-                    </button>
-                  </td>
-                </ng-container>
-              
-                <!-- <tr mat-header-row *matHeaderRowDef="displayed_columns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayed_columns;"
-                    [ngClass]="{'highlighted-row': !!updated_row && ifHighlightedRow(row)}"></tr> -->
-    
-                <tr mat-header-row *matHeaderRowDef="displayed_columns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayed_columns;"></tr>
-              </table>
-              <div 
-                *ngIf="!!table_config?.ediTable?.add"
-                class="modhyobitto-table__add">
-                    <button 
-                        class="modhyobitto-table__action-button"
-                        matRipple
-                        matTooltip="Add New Row"
-                        matTooltipPosition="left"
-                        aria-label="Add New Row"
-                        (click)="addRow()">
-                        <span class="material-icons">
-                        playlist_add
-                        </span>
-                    </button>
-                </div>
-              <mat-paginator [pageSize]="5" [pageSizeOptions]="[5,10]" showFirstLastButtons></mat-paginator>
-        </div>        
+    <table mat-table [dataSource]="table_data_source" class="modhyobitto-table__grid">
+        <ng-container 
+            *ngFor="let column of table_config.columns; index as i"
+            [matColumnDef]="column.key">
+            <th mat-header-cell *matHeaderCellDef [ngClass]="{'numeric-col': !!column.numeric}">{{column.heading}}</th>
+            <td mat-cell *matCellDef="let table_row" [ngClass]="{'numeric-col': !!column.numeric}"> {{table_row[column.key]}} </td>
+        </ng-container>
+        
+        <!-- Edit Column -->
+        <ng-container 
+            *ngIf="!!table_config?.ediTable?.edit"
+            matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let table_row" class="row-action-column">
+            <button 
+                matRipple
+                class="modhyobitto-table__action-button"
+                matTooltip="Edit Row"
+                matTooltipPosition="left"
+                aria-label="Edit Row"
+                (click)="editRow(table_row)">
+                <span aria-hidden="true" class="material-icons-outlined">edit</span>
+            </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayed_columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayed_columns; let i = index;"
+            [ngClass]="{'highlighted-row': updated_row_index == i}"></tr>
+    </table>
+    <div 
+        *ngIf="!!table_config?.ediTable?.add"
+        class="modhyobitto-table__add">
+            <button 
+                class="modhyobitto-table__action-button"
+                matRipple
+                matTooltip="Add New Row"
+                matTooltipPosition="left"
+                aria-label="Add New Row"
+                (click)="addRow()">
+                <span class="material-icons">
+                playlist_add
+                </span>
+            </button>
+    </div>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5,10]" showFirstLastButtons></mat-paginator>
+</div>        

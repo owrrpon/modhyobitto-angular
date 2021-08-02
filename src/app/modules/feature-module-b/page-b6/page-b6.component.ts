@@ -35,7 +35,9 @@ export class PageB6Component implements OnInit {
   }
 
   updateTableData(){
-    this.table_config.table_data_changer.next(DUMMY_TABLE_DATA2);
+    this.table_config.table_data_changer.next({
+      data: DUMMY_TABLE_DATA2
+    });
   }
 
 }

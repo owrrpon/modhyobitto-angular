@@ -38,6 +38,31 @@ export class PageB7Component implements OnInit {
   ngOnInit(): void {
   }
 
+  addNewRow(){
+    console.log("row to add");
+  }
+
+  editRow(row: any){
+    console.log("row to edit = "+row.a);
+  }
+
+  afterRowEdit(){
+    let updated_row = { a: 'Dummy4', b: 'Edit String 4', c: 24};
+    this.table_config.table_data_changer.next({
+      data: DUMMY_TABLE_DATA2,
+      highlight: updated_row
+    });
+  }
+
+  afterRowAdd(){
+    let updated_row = { a: 'Dummy99', b: 'New String 99', c: 99};
+    this.table_config.table_data_changer.next({
+      data: DUMMY_TABLE_DATA3,
+      highlight: updated_row
+    });
+  }
+
+
 }
 
 const DUMMY_TABLE_DATA: any[]= [
@@ -61,4 +86,51 @@ const DUMMY_TABLE_DATA: any[]= [
   { a: 'Dummy18', b: 'Data String 18', c: 38},
   { a: 'Dummy19', b: 'Data String 19', c: 39},
   { a: 'Dummy20', b: 'Data String 20', c: 40},
+];
+
+const DUMMY_TABLE_DATA2: any[]= [
+  { a: 'Dummy1', b: 'Data String 1', c: 21},
+  { a: 'Dummy2', b: 'Data String 2', c: 22},
+  { a: 'Dummy3', b: 'Data String 3', c: 23},
+  { a: 'Dummy4', b: 'Edit String 4', c: 24},
+  { a: 'Dummy5', b: 'Data String 5', c: 25},
+  { a: 'Dummy6', b: 'Data String 6', c: 26},
+  { a: 'Dummy7', b: 'Data String 7', c: 27},
+  { a: 'Dummy8', b: 'Data String 8', c: 28},
+  { a: 'Dummy9', b: 'Data String 9', c: 29},
+  { a: 'Dummy10', b: 'Data String 10', c: 30},
+  { a: 'Dummy11', b: 'Data String 11', c: 31},
+  { a: 'Dummy12', b: 'Data String 12', c: 32},
+  { a: 'Dummy13', b: 'Data String 13', c: 33},
+  { a: 'Dummy14', b: 'Data String 14', c: 34},
+  { a: 'Dummy15', b: 'Data String 15', c: 35},
+  { a: 'Dummy16', b: 'Data String 16', c: 36},
+  { a: 'Dummy17', b: 'Data String 17', c: 37},
+  { a: 'Dummy18', b: 'Data String 18', c: 38},
+  { a: 'Dummy19', b: 'Data String 19', c: 39},
+  { a: 'Dummy20', b: 'Data String 20', c: 40},
+];
+
+const DUMMY_TABLE_DATA3: any[]= [
+  { a: 'Dummy1', b: 'Data String 1', c: 21},
+  { a: 'Dummy2', b: 'Data String 2', c: 22},
+  { a: 'Dummy3', b: 'Data String 3', c: 23},
+  { a: 'Dummy4', b: 'Data String 4', c: 24},
+  { a: 'Dummy5', b: 'Data String 5', c: 25},
+  { a: 'Dummy6', b: 'Data String 6', c: 26},
+  { a: 'Dummy7', b: 'Data String 7', c: 27},
+  { a: 'Dummy8', b: 'Data String 8', c: 28},
+  { a: 'Dummy9', b: 'Data String 9', c: 29},
+  { a: 'Dummy10', b: 'Data String 10', c: 30},
+  { a: 'Dummy11', b: 'Data String 11', c: 31},
+  { a: 'Dummy12', b: 'Data String 12', c: 32},
+  { a: 'Dummy13', b: 'Data String 13', c: 33},
+  { a: 'Dummy14', b: 'Data String 14', c: 34},
+  { a: 'Dummy15', b: 'Data String 15', c: 35},
+  { a: 'Dummy16', b: 'Data String 16', c: 36},
+  { a: 'Dummy17', b: 'Data String 17', c: 37},
+  { a: 'Dummy18', b: 'Data String 18', c: 38},
+  { a: 'Dummy19', b: 'Data String 19', c: 39},
+  { a: 'Dummy20', b: 'Data String 20', c: 40},
+  { a: 'Dummy99', b: 'New String 99', c: 99},
 ];

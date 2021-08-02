@@ -604,6 +604,21 @@
                 font-size: 1rem;
             }        
         }
+        .highlighted-row{
+            animation-name: highlighted-row-pulse;
+            animation-duration: 0.75s;
+            animation-direction: alternate;
+            animation-iteration-count: 4;
+              
+            @keyframes highlighted-row-pulse {
+                0% {
+                    background-color: transparent;
+                }
+                100% {
+                    background-color: map-get($modhyobitto-colors, primary-light);
+                }
+            }
+        }
         .mat-cell{
             color: map-get($modhyobitto-colors, default-text);
             &.row-action-column{
@@ -627,7 +642,7 @@
         padding: 10px 8px 0;
     }
     .modhyobitto-table__action-button{
-        background: white;
+        background: transparent;
         border-radius: 50%;
         color: map-get($modhyobitto-colors, primary);
         height: 40px;
