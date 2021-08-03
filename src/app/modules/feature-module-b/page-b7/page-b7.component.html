@@ -10,10 +10,71 @@
         <button matRipple class="primary-button col-12 col-sm-5" (click)="afterRowEdit()">Edit Row</button>
     </div>
     <div class="mt-5">
-        <app-modhyobitto-table 
-            [table_config]="table_config"
-            (onRowAdd)="addNewRow()" 
-            (onRowEdit)="editRow($event)">
-        </app-modhyobitto-table>        
+        <mat-drawer-container class="modhyobitto-table-drawer-container">
+            <mat-drawer mode="over" position="end" #table_update_drawer
+                [opened]="is_table_being_updated"
+                disableClose="true">
+                <section class="table-update">
+                    <form class="table-update__form"
+                        [formGroup]="table_update_form"
+                        (ngSubmit)="updateTableData()"
+                        #form_ref="ngForm">
+                        <header class="table-update__header">
+                            <h2 class="h3">{{is_new_row_being_added? 'Add New' : 'Edit'}} Row</h2>
+                        </header>
+                        <div class="table-update__fields">
+                            <div class="row">
+                                <div class="col-6">
+                                    <app-modhyobitto-form-field
+                                        [parent_FG]="table_update_form"
+                                        control_name="a"
+                                        label="Column A">
+                                    </app-modhyobitto-form-field>
+                                </div>
+                                <div class="col-6">
+                                    <app-modhyobitto-form-field
+                                        [parent_FG]="table_update_form"
+                                        control_name="c"
+                                        label="Column C">
+                                    </app-modhyobitto-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <app-modhyobitto-form-field
+                                        [parent_FG]="table_update_form"
+                                        control_name="b"
+                                        label="Column B">
+                                    </app-modhyobitto-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="table-update__footer">
+                            <div class="row">
+                                <div class="col-6">
+                                    <button matRipple
+                                        class="secondary-button"
+                                        type="button"
+                                        (click)="is_table_being_updated = false">Dismiss</button>
+                                </div>
+                                <div class="col-6">
+                                    <button matRipple
+                                        class="primary-button"
+                                        type="submit"
+                                        [disabled]="!table_update_form.valid">Save</button>
+                                </div>
+                            </div>
+                        </footer>
+                    </form>
+                </section>
+            </mat-drawer>
+            <mat-drawer-content>
+                <app-modhyobitto-table 
+                    [table_config]="table_config"
+                    (onRowAdd)="addNewRow()" 
+                    (onRowEdit)="editRow($event)">
+                </app-modhyobitto-table>
+            </mat-drawer-content>
+        </mat-drawer-container>
     </div>
 </article>

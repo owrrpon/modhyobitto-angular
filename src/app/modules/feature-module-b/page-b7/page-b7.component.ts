@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Subject, Subscription } from 'rxjs';
+import { AppUtilityService } from 'src/app/app-utility.service';
 
 @Component({
   selector: 'app-page-b7',
   templateUrl: './page-b7.component.html',
   styleUrls: ['./page-b7.component.scss']
 })
-export class PageB7Component implements OnInit {
+export class PageB7Component implements OnInit, OnDestroy {
 
   table_config = {
     columns:  [
@@ -32,18 +34,52 @@ export class PageB7Component implements OnInit {
     }
   };
 
+  // for table update form
+  primary_key_set:  string[] = ['a'];
+  is_table_being_updated: boolean = true;
+  is_new_row_being_added: boolean = true;
+  table_update_form!: FormGroup;
+  existing_row_values!: any;
+
+  // for table update API call
+  private update_table_data_sub!: Subscription;
   
-  constructor() { }
+  constructor(
+    private global_utilities: AppUtilityService
+    ) { 
+      this.table_update_form = new FormGroup({
+        a: new FormControl('',[Validators.required]),
+        b: new FormControl('',[]),
+        c: new FormControl('',[])
+      });
+  }
 
   ngOnInit(): void {
   }
 
+  closeDrawer(){
+
+  }
+
   addNewRow(){
-    console.log("row to add");
+    // enabling the primary key fields
+    this.global_utilities.toggleFormControls(this.table_update_form, this.primary_key_set, true);
+    // to reset the entire form
+    this.table_update_form.reset();
+    this.is_table_being_updated = true;
+    this.is_new_row_being_added =  true;
   }
 
   editRow(row: any){
-    console.log("row to edit = "+row.a);
+    this.existing_row_values = {...row};
+    // to reset the entire form
+    this.table_update_form.reset();
+    // patch existing values in the form
+    this.table_update_form.patchValue(row);
+    // disabling the primary key fields
+    this.global_utilities.toggleFormControls(this.table_update_form, this.primary_key_set, false);
+    this.is_table_being_updated = true;
+    this.is_new_row_being_added =  false;
   }
 
   afterRowEdit(){
@@ -60,6 +96,16 @@ export class PageB7Component implements OnInit {
       data: DUMMY_TABLE_DATA3,
       highlight: updated_row
     });
+  }
+
+  updateTableData(){
+
+  }
+
+  ngOnDestroy(): void {
+    this.global_utilities.unsubscribeAll([
+      this.update_table_data_sub
+    ]);
   }
 
 
@@ -131,6 +177,6 @@ const DUMMY_TABLE_DATA3: any[]= [
   { a: 'Dummy17', b: 'Data String 17', c: 37},
   { a: 'Dummy18', b: 'Data String 18', c: 38},
   { a: 'Dummy19', b: 'Data String 19', c: 39},
-  { a: 'Dummy20', b: 'Data String 20', c: 40},
   { a: 'Dummy99', b: 'New String 99', c: 99},
+  { a: 'Dummy20', b: 'Data String 20', c: 40}
 ];

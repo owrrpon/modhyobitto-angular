@@ -15,6 +15,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 const MATERIAL_COMPONENTS = [
@@ -34,7 +35,8 @@ const MATERIAL_COMPONENTS = [
   MatProgressBarModule,
   MatTooltipModule,
   MatTableModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatSidenavModule
 ];
 
 

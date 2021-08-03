@@ -606,7 +606,7 @@
         }
         .highlighted-row{
             animation-name: highlighted-row-pulse;
-            animation-duration: 0.75s;
+            animation-duration: 1s;
             animation-direction: alternate;
             animation-iteration-count: 4;
               
@@ -671,6 +671,30 @@
     .mat-paginator-range-actions{
         button{
             color: map-get($modhyobitto-colors, primary);
+        }
+    }
+}
+
+.modhyobitto-table-drawer-container{
+    mat-drawer{
+        .table-update{
+            padding: 1rem 2rem;
+            .table-update__header{
+                h2{
+                    border-bottom: 1px solid map-get($modhyobitto-colors, divider);
+                    color: map-get($modhyobitto-colors, primary-dark);
+                    font-family: 'Roboto', sans-serif;
+                    margin-bottom: 1rem;
+                    padding-bottom: 0.5rem;
+                }
+                margin-bottom: 2rem;
+            }
+            .table-update__footer{
+                margin: 1.5rem 0;
+                button{
+                    width: 100%;
+                }
+            }
         }
     }
 }
