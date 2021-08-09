@@ -1,14 +1,10 @@
 <article class="page-content page-b7">
     <div class="page-content__header">
-        <h1>EdiTable 1</h1>
+        <h1>EdiTable</h1>
     </div>
     <p class="page-content__description">
         Did you write the book of love and do you have faith in God above if the Bible tells you so? Now, do you believe in rock 'n' roll? Can music save your mortal soul? And can you teach me how to dance real slow? Well, I know that you're in love with him 'cause I saw you dancin' in the gym. You both kicked off your shoes. Man, I dig those rhythm and blues. I was a lonely teenage bronckin' buck with a pink carnation and a pickup truck but I knew I was out of luck. The day the music died.
     </p>
-    <div class="row g-0 justify-content-around mt-5">
-        <button matRipple class="primary-button col-12 col-sm-5" (click)="afterRowAdd()">Add Row</button>
-        <button matRipple class="primary-button col-12 col-sm-5" (click)="afterRowEdit()">Edit Row</button>
-    </div>
     <div class="mt-5">
         <mat-drawer-container class="modhyobitto-table-drawer-container">
             <mat-drawer mode="over" position="end" #table_update_drawer
@@ -17,8 +13,7 @@
                 <section class="table-update">
                     <form class="table-update__form"
                         [formGroup]="table_update_form"
-                        (ngSubmit)="updateTableData()"
-                        #form_ref="ngForm">
+                        (ngSubmit)="updateTableData()">
                         <header class="table-update__header">
                             <h2 class="h3">{{is_new_row_being_added? 'Add New' : 'Edit'}} Row</h2>
                         </header>
@@ -28,7 +23,8 @@
                                     <app-modhyobitto-form-field
                                         [parent_FG]="table_update_form"
                                         control_name="a"
-                                        label="Column A">
+                                        label="Column A"
+                                        placeholder="Enter Dummy99">
                                     </app-modhyobitto-form-field>
                                 </div>
                                 <div class="col-6">
@@ -50,14 +46,14 @@
                             </div>
                         </div>
                         <footer class="table-update__footer">
-                            <div class="row">
-                                <div class="col-6">
+                            <div class="row flex-column-reverse flex-sm-row">
+                                <div class="col-12 col-sm-6">
                                     <button matRipple
-                                        class="secondary-button"
+                                        class="secondary-button mt-3 mt-sm-0"
                                         type="button"
                                         (click)="is_table_being_updated = false">Dismiss</button>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-12 col-sm-6">
                                     <button matRipple
                                         class="primary-button"
                                         type="submit"

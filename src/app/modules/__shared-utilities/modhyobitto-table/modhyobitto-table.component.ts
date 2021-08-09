@@ -72,7 +72,9 @@ export class ModhyobittoTableComponent implements OnInit, AfterViewInit, OnDestr
     let updated_index = data.findIndex(
       (row)=>{
         let is_matching = true;
-        for(const column in updated_row){
+        let primary_key_count = this.table_config.primary_key_set.length;
+        for(let i=0; i<primary_key_count; i++){
+          let column = this.table_config.primary_key_set[i];
           if(row[column]!=updated_row[column]){
             is_matching = false;
             break;

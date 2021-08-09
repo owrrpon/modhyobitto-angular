@@ -691,6 +691,9 @@
             }
             .table-update__footer{
                 margin: 1.5rem 0;
+                @include media-breakpoint-down(sm) { 
+                    margin: 1rem 0;
+                }
                 button{
                     width: 100%;
                 }
