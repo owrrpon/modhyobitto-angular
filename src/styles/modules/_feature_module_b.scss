@@ -1,1 +1,15 @@
 //This file will have feature module specific styles that will not be used outside this particular module.
+
+.blog-links{
+    list-style: none;
+    margin-top: 2rem;
+    li{
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        span{
+            color: map-get($modhyobitto-colors, primary);
+            margin-right: 0.5rem;
+        }
+    }
+}
