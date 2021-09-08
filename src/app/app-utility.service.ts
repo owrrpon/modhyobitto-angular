@@ -52,7 +52,7 @@ export class AppUtilityService extends AppDictionaryService {
     this.hideBanner();
 
     // For local API requests, fetch the JSON file instead
-    if(!environment.production){
+    if(!environment.production || environment.dummy_JSONs){
       HTTP_method = 'GET';
       API_URL += '.json';
     }

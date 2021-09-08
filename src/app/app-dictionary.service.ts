@@ -30,7 +30,7 @@ export class AppDictionaryService {
 
   // Mapping website host with API host
   API_hosts: { [key:string]: string } = {
-    'dummyhost': 'dummyhost:8080'
+    'dummyhost': 'dummyhost:8080/AppName/'
   };
 
   // Mapping website host with environment if needed by the API
@@ -39,16 +39,16 @@ export class AppDictionaryService {
   };
 
   settings = {
-    API_full_hostname : 'assets/JSONs/'    
+    API_full_hostname : document.location.origin+'/assets/JSONs/'
   };
 
   constructor() { 
-    // For our sample application here, we have simply considered development as the localhost 
-    // using JSONs and production for any subsequent environment.
-    if(environment.production){
+    // For our sample application here, we have simply considered any environment
+    // setting "dummy_JSONs" to use the JSON files instead of backend API
+    if(!environment.dummy_JSONs){
       let api_host = this.API_hosts[document.location.hostname];
       // The API application name wil be as per the backend host
-      this.settings.API_full_hostname = document.location.protocol+"//"+api_host+'/<API application name>/';
+      this.settings.API_full_hostname = document.location.protocol+"//"+api_host;
     }
   }
 
