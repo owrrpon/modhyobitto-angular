@@ -22,3 +22,7 @@ The idea is to help others and me in easily bootstrapping a practical Angular ap
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+
+## Working Example
+
+You can visit [angular.owrrpon.dev](https://angular.owrrpon.dev/) for the latest working sample Angular application based on the code in this repo.
